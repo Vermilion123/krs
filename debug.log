@@ -1,0 +1,12 @@
+[0330/165548.499:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0330/182758.078:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0330/182926.744:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0403/110212.611:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0403/120849.958:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0403/182425.153:ERROR:file_io_win.cc(161)] CreateFile C:\Users\Tuseeva.MN\AppData\Local\Temp\scoped_dir13276_8712\Crashpad\settings.dat: Системе не удается найти указанный путь. (0x3)
+[0403/182425.155:ERROR:file_io_win.cc(170)] CreateFile C:\Users\Tuseeva.MN\AppData\Local\Temp\scoped_dir13276_8712\Crashpad\reports\0d9ceb32-610b-4ce6-a7d6-62097d3dae6e.dmp: Системе не удается найти указанный путь. (0x3)
+[0403/182425.155:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0403/192101.008:ERROR:file_io_win.cc(161)] CreateFile C:\Users\Tuseeva.MN\AppData\Local\Temp\scoped_dir10344_19890\Crashpad\settings.dat: Системе не удается найти указанный путь. (0x3)
+[0403/192101.009:ERROR:file_io_win.cc(170)] CreateFile C:\Users\Tuseeva.MN\AppData\Local\Temp\scoped_dir10344_19890\Crashpad\reports\8bd34dff-1bb4-45ba-b588-cfa737d37063.dmp: Системе не удается найти указанный путь. (0x3)
+[0403/192101.009:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0404/105523.937:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports

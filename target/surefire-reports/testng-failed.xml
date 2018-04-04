@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [TestSuite]" verbose="0">
+  <parameter name="browser" value="Chrome"/>
+  <test parallel="tests" name="ChromeTest(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="NewDocTest">
+        <methods>
+          <include name="setup"/>
+          <include name="New_Doc_DEFAULT"/>
+          <include name="delete_infofields_from_doc"/>
+          <include name="Search_by_infofields"/>
+          <include name="quit"/>
+          <include name="Search_by_infofields_del"/>
+        </methods>
+      </class> <!-- NewDocTest -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [TestSuite] -->
