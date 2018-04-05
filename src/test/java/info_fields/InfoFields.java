@@ -100,30 +100,17 @@ public class InfoFields {
 		doc_num = String.valueOf(a).substring(2, 7);
 		$(By.xpath("//a[@href='/document/new']")).click();
 		$(By.xpath("//span[@class='k-select'][1]")).click();
-    	$("#documentTypeId_listbox").shouldBe(visible);
+		$("#documentTypeId_listbox").shouldBe(visible);
     	$("[aria-owns=\"receiver-id_listbox\"]").shouldHave(attribute("aria-disabled", "true"));
-    	$("#client-relation").shouldBe(visible);
-    	$("#number").shouldBe(disabled);
-    	$("#date").shouldBe(disabled);
-    	$("#parent").shouldBe(disabled);
-    	$("#doc-comment").shouldBe(enabled);
-    	$("[data-action=save]").shouldBe(visible);
-    	$("[data-action=cancel]").shouldBe(visible);
-    	$("#new-doc").shouldNotBe(visible);
-    	$("#document-upload-link").shouldNotBe(visible);
-    	$("#attachment").shouldNotBe(visible);
-    	$("dd[data-bind=\"visible: sumFieldsVisible\"]").shouldNotBe(visible);
-    	$("dd[data-bind=\"visible: contractFieldsVisible\"]").shouldNotBe(visible);
-    	$(By.xpath("//input[@aria-owns='documentTypeId_listbox']")).sendKeys("упд");
+    	$(By.xpath("//input[@aria-owns='documentTypeId_listbox']")).val("УПД");
+    	sleep(1000);
+    	
     	$(By.xpath("//li[contains(text(),\"УПД. Счет-фактура\")]")).click();
-    	$("[aria-owns=\"receiver-id_listbox\"]").shouldHave(attribute("aria-disabled", "false"));
     	$("[aria-owns=\"receiver-id_listbox\"]").click();
     	sleep(500);
     	System.out.println(cmp_name_search_key);
     	$("input[aria-owns=\"receiver-id_listbox\"]").val(cmp_name_search_key);
     	$(By.xpath("//small[contains(text(),'"+cmp_search_string+"')]")).click();
-    	$("#document-upload-link").shouldBe(visible);
-    	$("#new-doc").shouldBe(visible);
     	$("#new-doc").click();
     	$("#key").sendKeys("auto"+doc_num);
     	$(By.xpath("//a[@data-bind=\"click: addSigner\"]")).click();
@@ -157,10 +144,28 @@ public class InfoFields {
 		sleep(1000);
 		$("[data-tab-name=\"infoField\"]").click();
 		sleep(500);
+		
 		$(By.xpath("//div[@id='raw-container']/dt/input")).val("First_key");
 		$(By.xpath("//div[@id='raw-container']/dd/input")).val("Value_key_"+doc_num);
 		$(By.xpath("//input[@type=\"submit\"]")).click();
 		sleep(1000);
+		$(By.xpath("descendant-or-self::a[contains(text(),'"+doc_num+"')]")).shouldBe(visible);
+		
+		$(By.xpath("//span[contains(text(),\"Расширенный поиск\")]")).click();
+		$(By.xpath("//div[@id='raw-container']/dt/input")).val("First_key");
+		$(By.xpath("//div[@id='raw-container']/dd/input")).val("VALUE_KEY_"+doc_num);
+		$(By.xpath("//input[@type=\"submit\"]")).click();
+		sleep(1000);
+		$(By.xpath("descendant-or-self::a[contains(text(),'"+doc_num+"')]")).shouldBe(visible);
+		
+		$(By.xpath("//span[contains(text(),\"Расширенный поиск\")]")).click();
+		String cut_val = ("Value_key_"+doc_num).substring(0, 14);
+		$(By.xpath("//div[@id='raw-container']/dt/input")).val("First_key");
+		$(By.xpath("//div[@id='raw-container']/dd/input")).val(cut_val);
+		$(By.xpath("//input[@type=\"submit\"]")).click();
+		sleep(1000);
+		$(By.xpath("descendant-or-self::a[contains(text(),'"+doc_num+"')]")).shouldBe(visible);
+		
 		$(By.xpath("descendant-or-self::a[contains(text(),'"+doc_num+"')]")).click();
 		$("#documentEditable").click();
 		$("#edit-doc").click();
