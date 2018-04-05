@@ -1,0 +1,650 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" class="k-webkit k-webkit65"><head>
+  
+<title>Документы компании</title>
+<link rel="shortcut icon" href="/content/images/korus.ico" />
+
+<link rel="stylesheet" href="/content/common.css?v=48.0.0.7704" />
+<link rel="stylesheet" href="/content/korus.css?v=48.0.0.7704" />
+
+<!--[if IE 9]><link rel="stylesheet" type="text/css" href="/content/css/ie9.css"/><![endif]-->
+<!--[if lt IE 9]><script type="text/javascript">window.location.href = '/content/browsers.html';</script><![endif]-->
+
+<script async="" src="https://cdn.appdynamics.com/adrum-ext.206c403a1a532b310b15ea4509f4902b.js"></script><script src="/js/vendor.js?v=48.0.0.7704"></script>
+<script src="/js/extends.js?v=48.0.0.7704"></script>
+<script type="text/javascript">
+  serverSettings = {
+    app: '/',
+    debug: false,
+    skin: {
+      name: 'korus'
+    },
+    userDirectory: 2,
+    lkkBaseUrl: 'https://lkk-preprod.esphere.ru/',
+    lkkServicesUrl: '/webapi/lkk/personServices',
+    knowledgeBaseDirectory: 'http://knowledgebase.esphere.local/courier/',
+    whenChecked: '',
+    search: {
+      elastic: {
+        multiObjectFilter: {
+          maximumSize: 500
+        }
+      }
+    }
+  };
+
+  userSettings = {
+    isBranchExists: false,
+    privileges: ["company.api.impersonate","company.routeTemplate.write","company.relation.write","company.user.write","document.company.read","company.api.subcription","company.admin","company.group.write","company.branch.setting.write","document.route.edit","company.read","company.archive","user","document.unrouted","company.relation.read","document.route.editAny","company.doctype.write","document.write"]
+  };
+
+  cadesplugin_load_timeout = 20000; // Устанавливаем таймаут инициализации плагина. Т.к. существует вероятность бесконечного ожидания promise'а.
+</script>
+<script src="/js/main.js?v=48.0.0.7704"></script>
+
+
+    
+  <script type="text/javascript">
+    var view;
+    $(function () {
+      view = new ui.view.DocumentList();
+      view.init({"defaultFolder":10,"client":{"parentId":null,"taxAuthorityCode":"7715","isRestrictedAccess":false,"directRecall":true,"autoSendMessage":true,"isArchiveAccess":false,"isExistsBranch":false,"blockWriteAccess":false,"id":39172,"companyType":1,"name":"ООО \u0022РАДУГА\u0022","fullName":"ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \u0022РАДУГА\u0022","lastName":null,"firstName":null,"middleName":null,"inn":"7715977140","kpp":"771501001","registryNumber":"1137746899597","registrationRequisites":null,"directories":2,"isLocal":true},"mode":null,"relationRequestCount":0});
+    });
+  </script>
+  
+
+  
+
+</head>
+
+<body class="aside">
+  <div id="view" class="items">
+    
+      <div id="sidebar" class="sidebar">
+        <div>
+          
+
+
+<nav id="menu" data-update="/home/menudata" style="">
+  <ul id="document-folder-list" class="accordion">
+    
+
+
+<li class="active">
+  <span id="lm-area-documents" data-menu-status="DocumentsTotal" class="accordion-header"><span class="js-status-box count right warning">1</span>
+    <h5 data-url-map="document/new,document/&lt;number&gt;,document/edit/&lt;value&gt;,package/&lt;number&gt;,document/import,document/import/roz,document/details/&lt;number&gt;,docedit/derive">Документы</h5>
+  </span>
+
+  <ul class="menu-v accordion-body" style="">
+    <li class="level-1" id="lm-doc-onprocess">
+							<a href="/documents#?f=4" class="tt tt-t" title="Документы, требующие&#10;обработки (согласования)" data-url-map="documents/4/&lt;number&gt;" data-id="4" data-menu-status="OnProcess">
+								<span>На обработку</span>
+							</a>
+						</li>
+
+    <li class="level-1" id="lm-doc-noroute">
+							<a href="/documents#?f=10" class="tt tt-t" title="Входящие документы,&#10;для которых не задан&#10;порядок обработки" data-url-map="documents/10/&lt;number&gt;" data-id="10" data-menu-status="NoRoute"><span class="js-status-box count right warning">1</span>
+								<span>Без маршрута</span>
+							</a>
+						</li>
+
+    <li class="level-1" id="lm-doc-tickets">
+							<a href="/ticket" class="tt tt-t" title="Электронный документ,&#10;требующий ответную&#10;подтверждающую квитанцию" data-url-map="documents/8/&lt;number&gt;" data-id="8" data-menu-status="Tickets">
+								<span>Квитанции</span>
+							</a>
+						</li>
+
+    <li class="level-1" id="lm-doc-in">
+							<a href="/documents#?f=1" class="tt tt-t" title="Документооборот не завершен" data-url-map="documents/1/&lt;number&gt;" data-id="1" data-menu-status="In">
+								<span>Входящие</span>
+							</a>
+						</li>
+
+    <li class="level-1" id="lm-doc-out">
+							<a href="/documents#?f=2" class="" title="" data-url-map="documents/2/&lt;number&gt;" data-id="2" data-menu-status="Out">
+								<span>Исходящие</span>
+							</a>
+						</li>
+
+    <li class="level-1" id="lm-doc-favorites">
+							<a href="/documents#?f=5" class="" title="" data-url-map="documents/5/&lt;number&gt;" data-id="5" data-menu-status="Favorites">
+								<span>Избранное</span>
+							</a>
+						</li>
+
+    <li class="level-1" id="lm-doc-draft">
+							<a href="/documents#?f=3" class="" title="" data-url-map="documents/3/&lt;number&gt;" data-id="3" data-menu-status="Draft">
+								<span>Черновики</span>
+							</a>
+						</li>
+
+    <li class="level-1" id="lm-doc-processed">
+							<a href="/documents#?f=7" class="tt tt-t" title="Документооборот завершен" data-url-map="documents/7/&lt;number&gt;" data-id="7" data-menu-status="Processed">
+								<span>Обработанные</span>
+							</a>
+						</li>
+
+    <li class="level-1" id="lm-doc-archive">
+							<a href="/documents#?f=6" class="tt tt-t archive-notification" title="Документооборот завершен&#10;более 6 месяцев назад" data-url-map="documents/6/&lt;number&gt;" data-id="6" data-menu-status="Archive"><span class="js-status-box count right warning">Недоступен</span>
+								<span>Архив</span>
+							</a>
+						</li>
+
+    <li class="level-1" id="lm-doc-trash">
+							<a href="/documents#?f=9" class="" title="" data-url-map="documents/9/&lt;number&gt;" data-id="9" data-menu-status="Trash">
+								<span>Корзина</span>
+							</a>
+						</li>
+
+<li class="level-1 separator-t active" id="lm-doc-alldocuments">
+							<a href="/documents#?f=13" class="" title="" data-url-map="documents/13/&lt;number&gt;" data-id="13" data-menu-status="AllDocuments">
+								<span>Документы компании</span>
+							</a>
+						</li>  </ul>
+</li>
+
+    
+
+
+
+
+    
+
+
+
+
+    
+
+
+<li>
+  <span id="lm-area-request" data-menu-status="RelationRequestCount" class="accordion-header">
+    <h5>Контрагенты</h5>
+  </span>
+
+  <ul class="menu-v accordion-body" style="display: none;">
+    <li class="level-1" id="manage-request-list">
+							<a href="/manage/relations" class="" title="" data-menu-status="RelationRequestCount">
+								<span>Запросы</span>
+							</a>
+						</li>
+
+    <li class="level-1" id="manage-active-list">
+							<a href="/manage/relations/active" class="" title="">
+								<span>Активные контрагенты</span>
+							</a>
+						</li>
+  </ul>
+</li>
+
+    
+
+<li>
+  <span id="lm-area-admin" class="accordion-header">
+    <h5>Настройки</h5>
+  </span>
+
+  <ul class="menu-v accordion-body" style="display: none;">
+    <li class="level-1" id="manage-user-list">
+							<a href="/manage/users" class="" title="" data-url-map="manage/user/&lt;number&gt;,manage/users/history/&lt;number&gt;">
+								<span>Пользователи</span>
+							</a>
+						</li>
+
+    <li class="level-1" id="manage-group-list">
+							<a href="/manage/groups" class="" title="" data-url-map="manage/group/new,manage/group/&lt;number&gt;">
+								<span>Группы</span>
+							</a>
+						</li>
+
+    <li class="level-1" id="manage-role-list">
+							<a href="/manage/roles" class="" title="" data-url-map="manage/role/new,manage/role/&lt;number&gt;,manage/role/&lt;number&gt;/users">
+								<span>Роли</span>
+							</a>
+						</li>
+
+    <li class="level-1" id="manage-classifiers-list">
+							<a href="/manage/classifiers" class="" title="">
+								<span>Справочники</span>
+							</a>
+						</li>
+
+    <li class="level-1" id="manage-documenttype-list">
+							<a href="/manage/documenttypes" class="" title="" data-url-map="manage/documenttypes/details/&lt;number&gt;">
+								<span>Типы документов</span>
+							</a>
+						</li>
+
+    <li class="level-1" id="manage-route-list">
+							<a href="/manage/routes" class="" title="">
+								<span>Шаблоны маршрутов</span>
+							</a>
+						</li>
+
+    <li class="level-1" id="manage-company">
+							<a href="/manage/company" class="" title="">
+								<span>Организация</span>
+							</a>
+						</li>
+
+    
+
+  </ul>
+</li>
+
+
+    
+
+
+
+  </ul>
+</nav>
+        </div>
+      </div>
+
+    <div class="header-fix">
+      <div id="main-notification-box" style="display: none"><section class="info-box" style="" data-bind="visible: isBlockVisible"><div class="message items notification"><ul class="list"><li style="display: none" data-bind="visible: unrepliedTickets.count"><a class="link" data-bind="attr: { href: unrepliedTickets.link }" href="#"><span data-bind="text: unrepliedTickets.message"></span> </a>  <span data-bind="text: unrepliedTickets.messageTicket"></span>  <a href="#" id="sign-all-tickets-button" class="button" data-bind="click: unrepliedTickets.onSignAllClick">Подписать все</a></li>  <li style="display: none" data-bind="visible: relationRequestModel.visible"><a class="link" data-bind="attr: { href: relationRequestModel.link }" href="/manage/relations#?side=2&amp;status=2"><span data-bind="text: relationRequestModel.text">0 запросов</span> </a>  <span data-bind="text: relationRequestModel.textRequest"> на настройку взаимосвязей</span>  <a href="#" class="button" data-bind="click: relationRequestModel.onAcceptAll">Принять все</a></li><li style="display: none" data-bind="visible: isEmptyNotifyVisible"><span>Нет новых уведомлений</span></li></ul><div class="k-widget-wrapper" style="display: none;"><ul class="list k-widget k-listview" id="notificationList" data-template="notificationListTemplate" data-role="uilistview" data-bind="source: lkkNotificationsModel.dataSource, visible: lkkNotificationsModel.notEmpty" role="listbox" style="display: none;"></ul><div class="inner txt-center txt-gray">Нет данных для отображения</div></div></div></section></div>
+
+      <header class="header" id="header">
+  
+
+    <nav class="right" id="main-header-box">
+      <ul class="menu-h">
+        <li class="level-1">
+          <span class="name" id="tm-user-company">
+              <span id="tm-branch">ООО "РАДУГА"</span>
+          </span>
+
+        </li>
+
+        <li class="level-1 dropdown">
+          <span class="company" id="tm-user-name">
+            <span class="alt">Тусеева Мила Николаевна</span>
+          </span>
+          <ul class="pos-right">
+                <li class="level-2">
+                  <a href="/account/redirecttolkkusersettings">
+                    Профиль
+                  </a>
+                </li>
+              <li class="level-2">
+                <a id="tm-notification-settings" href="/account/notifications">
+                  Уведомления
+                </a>
+              </li>
+                          <li class="level-2 logout">
+                <a id="tm-logoff" href="/account/logout">
+                  Выйти из системы
+                </a>
+              </li>
+          </ul>
+        </li>
+        <li class="level-1" id="notification-caller" style="display:none">
+          <a href="#" class="toggle-info" onclick="return ui.toggleNotifications()">
+            <i class="uicon-alarm"></i>
+            <span class="count sup warning"></span>
+          </a>
+        </li>
+        <li class="level-1">
+          <a id="tm-help" href="http://knowledgebase.esphere.local/courier/" class="tt" title="Помощь" target="_blank">
+            <i class="icon-20 i-question"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+
+<script id="view-services-template" type="text/x-kendo-template">
+  &lt;ul data-template="view-services-item-template" data-bind="source: servicesSource"&gt;&lt;/ul&gt;
+</script>
+<script id="view-services-item-template" type="text/x-kendo-template">
+  &lt;li class="level-2"&gt;&lt;a href="${servUrl}" title="${servDesc}"&gt;&lt;span&gt;${servName}&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+</script>
+
+  <div class="nav-box left">
+    
+<nav>
+  <ul class="menu-h" id="view-services-header-container">
+        <li class="level-1"><span><i class="i-logo"></i></span></li>
+            <li class="level-1">
+          <a href="/account/redirecttolkk">
+            <span class="link">Личный кабинет</span>
+          </a>
+        </li>
+  
+    <li class="level-1 active">
+        <a id="" href="https://courier-demo.esphere.ru" title="Обмен с бизнес партнёрами счетами-фактурами, товарными накладными, актами сдачи-приёмки и любыми другими документами в электронном виде." target="">
+            <span>Курьер</span>
+        </a>
+    </li>
+</ul>
+</nav>
+
+  </div>
+  <div class="clear"></div>
+</header>
+
+<script id="view-services-header-item-template" type="text/x-kendo-template">
+    &lt;li class="level-1 ${isActive ? 'active' : ''}"&gt;
+        &lt;a id="${elementId}" href="${servUrl}" title="${servDesc}" target="# if (newWnd) { # _blank # } #"&gt;
+            &lt;span&gt;${servName}&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+</script>
+      <div class="statusbar fixed">
+  <div class="bar" style="width: 100%"></div>
+</div>
+
+    </div>
+
+    <div id="main-page" class="content-box">
+      <div class="wrapper">
+          
+
+  
+        <div class="box">
+          
+
+  <section class="sub-box">
+    <nav class="sub">
+      <ul class="menu-h" id="horizontal-sub-menu" style="display: none"></ul>
+    </nav>
+  </section>
+
+
+  <div id="document-list-upper-banner-container" style="display: none"></div>
+
+  <div id="toolbar-content">
+    
+    <div class="clear"></div>
+  <div><section class="inner">  <nav class="right"><ul class="menu-h"><li class="level-1 dropdown"><span>  Импорт /  Экспорт <i class="icon-20 i-chevron-down"></i></span><ul><li data-bind="visible: hasDocumentWritePrivilege" class="level-2"><a href="/document/import">Загрузить документы</a></li><li class="level-2"><a href="#" data-bind="click: exportGrid">Выгрузить в Excel</a></li></ul></li><li data-bind="visible: hasDocumentWritePrivilege"><a class="button warning" href="/document/new">Новый документ</a></li></ul></nav>  <h3 data-bind="text: title">Документы компании</h3><div class="clear"></div></section></div></div>
+
+  
+  <div class="pos-relative" id="new-filter-container"><section class="inner secondary"><div id="search-string-container"><div><nav class="right"><ul class="menu-h"><li class="level-1"><a href="#" data-bind="click: toggleFilter">  <span class="alt">Расширенный поиск</span> <span class="count" data-bind="visible: filterCount, text: filterCount" style="">1</span>  </a></li><li class="level-1"><a href="#"><i class="i-refresh" data-bind="click: refreshGrid" title="Обновить"></i></a></li></ul></nav>  <form class="search" data-bind="events: { submit: applyFilter }"><span class="k-textbox k-space-right width-50"><input data-bind="value: searchString" type="text" placeholder="Найти..." data-value-update="keyup keydown change" /> <a href="#" class="k-icon k-i-search" data-bind="click: applyFilter"> </a></span></form>  </div></div><div class="clear"></div><div class="filter-box" id="filter-box" style="display: none;"><div id="filter-content"><form id="filter-form" data-bind="events: { submit: applyFilter }"><div class="k-tabstrip-wrapper" style=""><div id="tabstrip" data-role="tabstrip" data-animation="false" data-bind="events: { select: onSelect }" tabindex="0" class="k-widget k-header k-tabstrip k-floatwrap k-tabstrip-top" role="tablist" aria-activedescendant="tabstrip_ts_active"><ul class="k-tabstrip-items k-reset"><li data-tab-name="document" style="" class="k-item k-state-default k-first" role="tab" aria-controls="tabstrip-1"><span class="k-loading k-complete"></span><span unselectable="on" class="k-link"><span id="tab-title-container"><span>Документ</span> </span></span></li><li data-tab-name="statuses" style="display:none" class="k-item k-state-default" role="tab" aria-controls="tabstrip-2"><span class="k-loading k-complete"></span><span unselectable="on" class="k-link"><span id="tab-title-container"></span></span></li><li data-tab-name="sums" style="display:none" class="k-item k-state-default" role="tab" aria-controls="tabstrip-3"><span class="k-loading k-complete"></span><span unselectable="on" class="k-link"><span id="tab-title-container"></span></span></li><li data-tab-name="contract" style="display:none" class="k-item k-state-default" role="tab" aria-controls="tabstrip-4"><span class="k-loading k-complete"></span><span unselectable="on" class="k-link"><span id="tab-title-container"></span></span></li><li data-tab-name="attributes" style="display:none" class="k-item k-state-default" role="tab" aria-controls="tabstrip-5"><span class="k-loading k-complete"></span><span unselectable="on" class="k-link"><span id="tab-title-container"></span></span></li><li data-tab-name="participants" style="" class="k-item k-state-default" role="tab" aria-controls="tabstrip-6"><span class="k-loading k-complete"></span><span unselectable="on" class="k-link"><span id="tab-title-container"><span>Маршрут</span> </span></span></li><li data-tab-name="infoField" style="" class="k-item k-state-default k-last k-tab-on-top k-state-active" role="tab" aria-controls="tabstrip-7" aria-selected="true"><span class="k-loading k-complete"></span><span unselectable="on" class="k-link"><span id="tab-title-container"><span>Инфополя</span>  <span class="count danger">1</span> </span></span></li></ul>   <div style="display: none;" class="k-content" id="tabstrip-1" role="tabpanel" aria-expanded="false" aria-hidden="true"><div class="k-content k-state-active"><div class="width-25 left"><div id="document-column-1-container" class="inner"><div class="item">  <label class="block">Тип</label><span title="" class="k-widget k-dropdown k-header width-100" unselectable="on" role="listbox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-owns="" aria-disabled="false" style=""><span unselectable="on" class="k-dropdown-wrap k-state-default"><span unselectable="on" class="k-input selection-empty">Все</span><span unselectable="on" class="k-select" aria-label="select"><span class="k-icon k-i-arrow-60-down"></span></span></span><input type="text" class="width-100" data-role="uidropdownlist" data-option-label="Все" data-auto-bind="false" data-text-field="name" data-value-field="id" data-value-primitive="true" data-filter="contains" data-bind="enabled: enabled, source: dataSource, value: value, events: { change: onChange }" style="display: none;" /></span></div><div class="item"><label class="block">Номер</label><input type="text" class="k-textbox width-100" data-bind="value: value, events: { change: onChange }" /></div><div class="item"><label class="block">Дата</label><div id="date-period-container"><div class="range"><span class="k-widget k-datepicker k-header" style=""><span class="k-picker-wrap k-state-default"><input id="fromDate" name="fromDate" type="text" data-role="uidatepicker" data-format="dd.MM.yyyy" data-bind="value: fromDate, events: { change: onChange }" class="k-input" role="combobox" aria-expanded="false" aria-owns="fromDate_dateview" aria-disabled="false" style="width: 100%;" /><span unselectable="on" class="k-select" aria-label="select" role="button" aria-controls="fromDate_dateview"><span class="k-icon k-i-calendar"></span></span></span></span><span class="k-widget k-datepicker k-header" style=""><span class="k-picker-wrap k-state-default"><input id="toDate" name="toDate" type="text" data-role="uidatepicker" data-format="dd.MM.yyyy" data-bind="value: toDate, events: { change: onChange }" class="k-input" role="combobox" aria-expanded="false" aria-owns="toDate_dateview" aria-disabled="false" style="width: 100%;" /><span unselectable="on" class="k-select" aria-label="select" role="button" aria-controls="toDate_dateview"><span class="k-icon k-i-calendar"></span></span></span></span></div></div></div></div></div><div class="width-50 left"><div id="document-column-2-container" class="inner"><div><dl class="list w-30 form"><dt><input type="radio" id="filter-date-period-created-radio" class="k-radio" value="1" data-bind="checked: eventType, events: { change: onChange }" /><label for="filter-date-period-created-radio" class="k-radio-label">Создан</label></dt><dd><div id="date-period-container"><div class="range"><span class="k-widget k-datepicker k-header" style=""><span class="k-picker-wrap k-state-default"><input id="fromDate" name="fromDate" type="text" data-role="uidatepicker" data-format="dd.MM.yyyy" data-bind="value: fromDate, events: { change: onChange }" class="k-input" role="combobox" aria-expanded="false" aria-owns="fromDate_dateview" aria-disabled="false" style="width: 100%;" /><span unselectable="on" class="k-select" aria-label="select" role="button" aria-controls="fromDate_dateview"><span class="k-icon k-i-calendar"></span></span></span></span><span class="k-widget k-datepicker k-header" style=""><span class="k-picker-wrap k-state-default"><input id="toDate" name="toDate" type="text" data-role="uidatepicker" data-format="dd.MM.yyyy" data-bind="value: toDate, events: { change: onChange }" class="k-input" role="combobox" aria-expanded="false" aria-owns="toDate_dateview" aria-disabled="false" style="width: 100%;" /><span unselectable="on" class="k-select" aria-label="select" role="button" aria-controls="toDate_dateview"><span class="k-icon k-i-calendar"></span></span></span></span></div></div></dd><dt><input type="radio" id="filter-date-period-sent-radio" class="k-radio" value="2" data-bind="checked: eventType, enabled: isSended, events: { change: onChange }" /><label for="filter-date-period-sent-radio" class="k-radio-label">Отправлен</label></dt><dd></dd><dt><input type="radio" id="filter-date-period-received-radio" class="k-radio" value="3" data-bind="checked: eventType, enabled: isSended, events: { change: onChange }" /><label for="filter-date-period-received-radio" class="k-radio-label">Получен</label></dt><dd></dd></dl></div></div></div><div class="width-25 left"><div id="document-column-3-container" class="inner"><div class="item"><label class="block">Контрагент</label><span title="" class="k-widget k-dropdown k-header width-100" unselectable="on" role="listbox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-owns="" aria-disabled="false" style=""><span unselectable="on" class="k-dropdown-wrap k-state-default"><span unselectable="on" class="k-input selection-empty">ИНН, КПП, ОГРН или наименование</span><span unselectable="on" class="k-select" aria-label="select"><span class="k-icon k-i-arrow-60-down"></span></span></span><input type="text" class="width-100" data-role="uidropdownlist" data-value-field="id" data-text-field="name" data-option-label="ИНН, КПП, ОГРН или наименование" data-min-length="3" data-auto-bind="false" data-value-primitive="true" data-filter="contains" data-template="participantItemTemplate" data-bind="enabled: enabled, source: dataSource, value: value, events: { change: onChange }" style="display: none;" /></span></div><div class="item"><label class="block">Направление</label><span title="" class="k-widget k-dropdown k-header width-100" unselectable="on" role="listbox" aria-haspopup="true" aria-expanded="false" aria-owns="" aria-disabled="true" aria-busy="false" aria-activedescendant="2fcfabbd-c2b8-431f-b646-1a0f65a98a1c" style=""><span unselectable="on" class="k-dropdown-wrap k-state-disabled"><span unselectable="on" class="k-input selection-empty">Все</span><span unselectable="on" class="k-select" aria-label="select"><span class="k-icon k-i-arrow-60-down"></span></span></span><input type="text" class="width-100" data-role="uidropdownlist" data-option-label="Все" data-value-primitive="true" data-value-field="key" data-text-field="value" data-bind="enabled: enabled, source: dataSource, value: value, events: { change: onChange }" disabled="disabled" style="display: none;" /></span></div></div></div></div></div>   <div style="display:none" class="k-content" id="tabstrip-2" role="tabpanel" aria-hidden="true" aria-expanded="false"><div class="k-content k-state-active"><div class="width-25 left"><div id="statuses-column-1-container" class="inner"><div class="item">  <label class="block">Статус</label><span title="" class="k-widget k-dropdown k-header width-100" unselectable="on" role="listbox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-owns="" aria-disabled="false" style=""><span unselectable="on" class="k-dropdown-wrap k-state-default"><span unselectable="on" class="k-input selection-empty">Все</span><span unselectable="on" class="k-select" aria-label="select"><span class="k-icon k-i-arrow-60-down"></span></span></span><input type="text" class="width-100" data-role="uidropdownlist" data-option-label="Все" data-auto-bind="false" data-text-field="text" data-value-field="value" data-value-primitive="true" data-filter="contains" data-bind="enabled: enabled, source: dataSource, value: value, events: { change: onChange }" style="display: none;" /></span></div></div></div><div class="width-25 left"><div id="statuses-column-2-container" class="inner"><div class="item"><label class="block">Оплата</label><span title="" class="k-widget k-dropdown k-header width-100" unselectable="on" role="listbox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-owns="" aria-disabled="false" aria-busy="false" aria-activedescendant="6259520c-cb85-4adb-9b02-e7d949e700fd" style=""><span unselectable="on" class="k-dropdown-wrap k-state-default"><span unselectable="on" class="k-input selection-empty">Все</span><span unselectable="on" class="k-select" aria-label="select"><span class="k-icon k-i-arrow-60-down"></span></span></span><input type="text" class="width-100" data-role="uidropdownlist" data-option-label="Все" data-value-primitive="true" data-value-field="key" data-text-field="value" data-bind="enabled: enabled, source: dataSource, value: value, events: { change: onChange }" style="display: none;" /></span></div></div></div><div class="width-25 left"><div id="statuses-column-3-container" class="inner"><div><label class="block">Аннулирование</label><input id="filter-avoidance-requested-checkbox" class="k-checkbox" type="checkbox" data-bind="checked: isRequested, events: { change: onChange }" /><label for="filter-avoidance-requested-checkbox" class="k-checkbox-label">Предложено</label><br /><input id="filter-avoidance-rejected-checkbox" class="k-checkbox" type="checkbox" data-bind="checked: isRejected, events: { change: onChange }" /><label for="filter-avoidance-rejected-checkbox" class="k-checkbox-label">Отклонено</label></div></div></div><div class="width-25 left"><div id="statuses-column-4-container" class="inner"><div class="item"><label class="block">Документооборот завершен</label><span title="" class="k-widget k-dropdown k-header width-100" unselectable="on" role="listbox" aria-haspopup="true" aria-expanded="false" aria-owns="" aria-disabled="true" aria-busy="false" aria-activedescendant="dc277cfd-b581-484a-80d9-7ac160c32afb" style=""><span unselectable="on" class="k-dropdown-wrap k-state-disabled"><span unselectable="on" class="k-input selection-empty">Все</span><span unselectable="on" class="k-select" aria-label="select"><span class="k-icon k-i-arrow-60-down"></span></span></span><input type="text" class="width-100" data-role="uidropdownlist" data-option-label="Все" data-value-primitive="true" data-value-field="key" data-text-field="value" data-bind="enabled: enabled, source: dataSource, value: value, events: { change: onChange }" disabled="disabled" style="display: none;" /></span></div></div></div></div></div>   <div style="display:none" class="k-content" id="tabstrip-3" role="tabpanel" aria-hidden="true" aria-expanded="false"><div class="k-content k-state-active"><div class="width-25 left"><div id="sums-column-1-container" class="inner"><div class="item"><label class="block">Сумма с НДС</label><div id="numeric-period-container"><div class="range"><span class="k-widget k-numerictextbox" style=""><span class="k-numeric-wrap k-state-default k-expand-padding"><input type="text" class="k-formatted-value k-input" title="" tabindex="0" placeholder="от" role="spinbutton" aria-valuemin="0" aria-disabled="false" style="" /><input id="numFrom" type="text" maxlength="17" data-role="numerictextbox" data-decimals="2" data-spinners="false" data-min="0" data-format="n" data-placeholder="от" data-bind="value: numFrom, events: { change: onChange }" role="spinbutton" class="k-input" aria-valuemin="0" aria-disabled="false" style="display: none;" /><span class="k-icon k-i-warning" style="display: none;"></span><span class="k-select" style="display: none;"><span unselectable="on" class="k-link k-link-increase" aria-label="Increase value" title="Increase value"><span unselectable="on" class="k-icon k-i-arrow-60-up"></span></span><span unselectable="on" class="k-link k-link-decrease" aria-label="Decrease value" title="Decrease value"><span unselectable="on" class="k-icon k-i-arrow-60-down"></span></span></span></span></span><span class="k-widget k-numerictextbox" style=""><span class="k-numeric-wrap k-state-default k-expand-padding"><input type="text" class="k-formatted-value k-input" title="" tabindex="0" placeholder="до" role="spinbutton" aria-valuemin="0" aria-disabled="false" style="" /><input id="numTo" type="text" maxlength="17" data-role="numerictextbox" data-decimals="2" data-spinners="false" data-min="0" data-format="n" data-placeholder="до" data-bind="value: numTo, events: { change: onChange }" role="spinbutton" class="k-input" aria-valuemin="0" aria-disabled="false" style="display: none;" /><span class="k-icon k-i-warning" style="display: none;"></span><span class="k-select" style="display: none;"><span unselectable="on" class="k-link k-link-increase" aria-label="Increase value" title="Increase value"><span unselectable="on" class="k-icon k-i-arrow-60-up"></span></span><span unselectable="on" class="k-link k-link-decrease" aria-label="Decrease value" title="Decrease value"><span unselectable="on" class="k-icon k-i-arrow-60-down"></span></span></span></span></span></div></div></div></div></div></div></div>   <div style="display:none" class="k-content" id="tabstrip-4" role="tabpanel" aria-hidden="true" aria-expanded="false"><div class="k-content k-state-active"><div class="width-25 left"><div id="contract-column-1-container" class="inner"><div class="item"><label class="block">Номер</label><input type="text" class="k-textbox width-100" data-bind="value: value, events: { change: onChange }" /></div></div></div><div class="width-25 left"><div id="contract-column-2-container" class="inner"><div class="item"><label class="block">Дата</label><div id="date-period-container"><div class="range"><span class="k-widget k-datepicker k-header" style=""><span class="k-picker-wrap k-state-default"><input id="fromDate" name="fromDate" type="text" data-role="uidatepicker" data-format="dd.MM.yyyy" data-bind="value: fromDate, events: { change: onChange }" class="k-input" role="combobox" aria-expanded="false" aria-owns="fromDate_dateview" aria-disabled="false" style="width: 100%;" /><span unselectable="on" class="k-select" aria-label="select" role="button" aria-controls="fromDate_dateview"><span class="k-icon k-i-calendar"></span></span></span></span><span class="k-widget k-datepicker k-header" style=""><span class="k-picker-wrap k-state-default"><input id="toDate" name="toDate" type="text" data-role="uidatepicker" data-format="dd.MM.yyyy" data-bind="value: toDate, events: { change: onChange }" class="k-input" role="combobox" aria-expanded="false" aria-owns="toDate_dateview" aria-disabled="false" style="width: 100%;" /><span unselectable="on" class="k-select" aria-label="select" role="button" aria-controls="toDate_dateview"><span class="k-icon k-i-calendar"></span></span></span></span></div></div></div></div></div></div></div>   <div style="display:none" class="k-content" id="tabstrip-5" role="tabpanel" aria-hidden="true" aria-expanded="false"><div class="k-content k-state-active"><div id="attributes-container" class="inner"><div></div></div></div></div>   <div style="display:none" class="k-content" id="tabstrip-6" role="tabpanel" aria-hidden="true" aria-expanded="false"><div class="k-content k-state-active"><div id="participants-column-1-container" class="inner"><div class="item"><label class="block">На обработку</label><div class="k-widget k-multiselect k-header width-100" deselectable="on" title="" style=""><div class="k-multiselect-wrap k-floatwrap" deselectable="on"><ul role="listbox" deselectable="on" class="k-reset"></ul><input class="k-input k-readonly" style="width: 45.3281px;" accesskey="" autocomplete="off" role="listbox" title="" aria-expanded="false" tabindex="0" aria-owns="" aria-disabled="false" aria-busy="false" aria-activedescendant="8d841a16-b924-4efa-8a93-1013a14c0815" /><span class="k-icon k-i-loading k-hidden"></span></div><select class="width-100" data-role="uimultiselect" data-item-template="onProcessFilterPartItemTemplate" data-tag-template="onProcessFilterPartItemTemplate" data-value-primitive="true" data-auto-bind="false" data-placeholder="(все)" data-text-field="name" data-value-field="id" data-bind="source: dataSource, value: value, enabled: enabled, events: { change: onChange, filtering: onFiltering }" multiple="multiple" aria-disabled="false" style="display: none;"><option value="U54112">Пелевин Виктор Олегович</option><option value="U54033">Тусеева Мила Николаевна</option><option value="R4">Бухгалтер</option><option value="R3">Руководитель</option><option value="R5">Сотрудник</option></select><span style="position: absolute; visibility: hidden; top: -3333px; left: -3333px;">(все)</span></div></div><div class="item" data-bind="invisible: invisible" style="display: none;"><label class="block" for="routeParticipant">Участник маршрута</label><div class="k-widget k-multiselect k-header width-100 k-state-disabled" deselectable="on" title="" style=""><div class="k-multiselect-wrap k-floatwrap" deselectable="on"><ul role="listbox" deselectable="on" class="k-reset"></ul><input class="k-input k-readonly" style="width: 45.3281px;" accesskey="" autocomplete="off" role="listbox" title="" aria-expanded="false" tabindex="0" aria-owns="" aria-disabled="true" disabled="disabled" /><span class="k-icon k-i-loading k-hidden"></span></div><select class="width-100" data-role="uimultiselect" data-value-primitive="true" data-auto-bind="false" data-placeholder="(все)" data-text-field="name" data-item-template="routeParticipantItemTemplate" data-value-field="id" data-bind="source: dataSource, value: value, enabled: enabled, events: { change: onChange, filtering: onFiltering }" multiple="multiple" aria-disabled="true" disabled="disabled" style="display: none;"></select><span style="position: absolute; visibility: hidden; top: -3333px; left: -3333px;">(все)</span></div></div></div></div></div>   <div style="display: block;" class="k-content k-state-active" id="tabstrip-7" role="tabpanel" aria-expanded="true"><div class="k-content k-state-active"><div id="infoField-container" class="inner"><div><div class="inner"><dl class="list w-40 item"><dt><label class="block">Ключ</label></dt><dd><label class="block">Значение</label></dd><div id="raw-container"><dt><input type="text" class="width-100 k-textbox" data-bind="value:key,events: { change: onChange }" maxlength="50" /></dt><dd><input type="text" class="width-90 k-textbox" data-bind="value:value,events: { change: onChange }" maxlength="2000" /> <a data-bind="events: { click: deleteRow }, visible: visibleCloseBtn" class="button more tt" data-hasqtip="45" oldtitle="Отклонить" title="Удалить" style="display: none;"><i class="sbicon-times"></i></a></dd></div></dl><span data-bind="visible: isAddInfoFieldButtonVisible"><i class="sbicon-add txt-success"></i> <a class="alt" data-bind="events: {click: onClickAddRawBtn}">Добавить инфополе</a></span></div></div></div></div></div>  </div></div><div><div class="ending inner"><a href="#" class="button blank right" data-bind="click: toggleFilter"><span class="alt">Закрыть поиск</span> </a><input type="submit" data-bind="click: applyFilter" class="button primary" value="Показать" /> <input type="reset" data-bind="click: clearFilter" class="button" value="Очистить" /><div class="clear"></div></div></div></form></div></div><ul><li id="tags-container" class="tags" data-bind="visible: hasSelectedTabs" style=""></li><li><ul id="additional-tags-container"><li class="tags" data-bind="visible: visible" style="display: none;"><small class="left">Атрибуты: </small><div id="attribute-tag-container"></div></li><li class="tags" data-bind="visible: visible" style=""><small class="left">Инфополе: </small><div id="infofield-tag-container"><span class="tag"><strong data-bind="text: name, click: selectTag">First_key</strong>: <span data-bind="text: value, click: selectTag">Value_key_59517</span> <a href="#" data-bind="click: deleteTag"><i class="icon-20 i-del" style="visibility:visible"></i></a></span></div></li></ul></li></ul><div class="clear"></div></section></div>
+
+  
+
+          
+
+
+
+
+
+<!-- user layout -->
+<div id="main-page-layout">
+  
+
+
+
+
+<div id="document-grid-container"><div data-role="uigrid" data-auto-bind="false" data-scrollable="false" data-checkbox="true" data-row-template="documentGridRowTemplate" data-pageable="true" data-action-bar="true" data-bind="source: dataSource,events: {progress: progress,dataBound: dataBound,selectionChanged: selectionChanged}" data-header-show="true" data-check-all="true" data-not-refresh-on-change-fields="['isMarked']" data-columns="[{ title: ' ', width: '4rem'},{ title: 'Создан', width: '10rem' },{ title: ' ', width: '4rem' },{ title: 'Документ' },{ title: ' ', width: '5rem'} ]" class="k-grid k-widget k-display-block ui"><div class="empty-notify inner txt-center txt-gray" style="margin: 8px 0px; display: none;"> </div><table role="grid" style=""><colgroup><col style="width:40px" /><col style="width:4rem" /><col style="width:10rem" /><col style="width:4rem" /><col /><col style="width:5rem" /></colgroup><thead class="k-grid-header" role="rowgroup"><tr role="row" class="k-alt"><th scope="col" role="columnheader" aria-haspopup="true" rowspan="1" data-index="0" id="e4a5afa4-860d-4d97-a727-409cef8373c5" class="check-row k-header"><input id="header-check-all-246a09de-734c-4ed4-917f-7cab61f98866" class="k-checkbox" type="checkbox" /><label for="header-check-all-246a09de-734c-4ed4-917f-7cab61f98866" class="k-checkbox-label"> </label></th><th scope="col" role="columnheader" aria-haspopup="true" rowspan="1" data-title=" " data-index="1" id="20e7e406-4dbc-4c06-a96c-e0896ec728e8" class="k-header"> </th><th scope="col" role="columnheader" aria-haspopup="true" rowspan="1" data-title="Создан" data-index="2" id="c10d8b6a-a721-4195-ac4b-80364caf2bc9" class="k-header">Создан</th><th scope="col" role="columnheader" aria-haspopup="true" rowspan="1" data-title=" " data-index="3" id="9488ec3b-0b2a-4866-a1f2-6911171849a5" class="k-header"> </th><th scope="col" role="columnheader" aria-haspopup="true" rowspan="1" data-title="Документ" data-index="4" id="9adeb59c-0748-4b51-9cc1-789e5ce8f914" class="k-header">Документ</th><th scope="col" role="columnheader" aria-haspopup="true" rowspan="1" data-title=" " data-index="5" id="0aaca76d-4e54-4484-a5bd-89afe1b8b533" class="k-header"> </th></tr></thead><tbody role="rowgroup"><tr role="row" class="k-grid-row" data-uid="25796646-a866-4164-a9c0-a6775c9c2b66"><td class="check-row"><input type="checkbox" class="k-checkbox check-line" id="doc-selector-25796646-a866-4164-a9c0-a6775c9c2b66" /><label for="doc-selector-25796646-a866-4164-a9c0-a6775c9c2b66" class="k-checkbox-label"> </label></td><td>  </td><td class="txt-gray"><span class="tt tt-t" title="Запись создана 04.04.2018 в 11:37:28">04.04.2018</span></td><td>  </td><td><div class="right txt-right"> 
+
+  
+
+    
+      
+        <span class="tag">Черновик</span>
+      
+
+    
+  
+
+ </div>  <a href="/documents/13/1151209">УПД. Счет-фактура №auto59517 от 04.04.2018</a>        <div>ООО "ЕДИНОРОГ"</div>      <div class="clear"></div></td><td>  <span class="dropdown"><span class="button blank more"><i class="icon-20 i-more"></i></span><ul class="pos-right">  <li class="level-2"><a href="#" class="route-config" data-bind="click: onStatusHistoryClick">История</a></li>     <li class="level-2"><a href="#" class="show-signatures"><span>Подписанты</span></a></li>   <li class="level-2"><a href="/download/document/1151209" class="route-config">Скачать</a></li>    </ul></span>  </td></tr></tbody></table><div class="actionbar" id="action-bar-e14619c2-f187-4c93-9588-3ae96d00b486" style="display: none;">
+			<div class="toolbar-box">
+				<div><div class="toolbar"><nav class="left"><ul class="menu-h"><li class="level-1" data-bind="toggleClass: { dropdown: isDropDownVisible }"><span data-bind="visible: isCheckAllVisible"><input id="check-all" class="k-checkbox" type="checkbox" /><label for="check-all" class="k-checkbox-label"><span id="check-count" class="count">0</span></label></span><ul><li class="level-2" data-bind="visible: isOnSignVisible" style="display: none;"><span><input id="check-all-on-sign" class="k-checkbox" type="checkbox" data-bind="checked: isOnSignSelected, events: { change: onSignChange }" /><label for="check-all-on-sign">На подписании</label></span></li><li class="level-2" data-bind="visible: isOnAcceptVisible" style="display: none;"><span><input id="check-all-on-accept" class="k-checkbox" type="checkbox" data-bind="checked: isOnAcceptSelected, events: { change: onAcceptChange }" /><label for="check-all-on-accept">На согласовании</label></span></li><li class="level-2" data-bind="visible: isOnAcceptRevokeVisible" style="display: none;"><span><input id="check-all-on-accept-revoke" class="k-checkbox" type="checkbox" data-bind="checked: isOnAcceptRevokeSelected, events: { change: onAcceptRevokeChange }" /><label for="check-all-on-accept-revoke">На согласовании отзыва</label></span></li><li class="level-2" data-bind="visible: isOnFavoriteVisible" style="display: none;"><span><input id="check-all-favorite" class="k-checkbox" type="checkbox" data-bind="checked: isOnFavoriteSelected, events: { change: onFavoriteChange }" /><label for="check-all-favorite">Избранные</label></span></li></ul></li><li style="" class="">  <a href="#" class="button primary" data-bind="click: doAction" data-action="send" title="">  Отправить  </a>  </li><li style="" class="">  <a href="#" class="button primary" data-bind="click: doAction" data-action="accept" title="">  Принять  </a>  </li><li style="" class="">  <a href="#" class="button primary" data-bind="click: doAction" data-action="sign" title="">  Подписать  </a>  </li><li style="" class="">  <a href="#" class="button" data-bind="click: doAction" data-action="reject" title="">  Отклонить/Уточнить  </a>  </li><li style="" class="">  <a href="#" class="button" data-bind="click: doAction" data-action="avoidance-request" title="">  Аннулировать  </a>  </li><li style="display: none" class="">  <a href="#" class="button primary" data-bind="click: doAction" data-action="save" title="">  Сохранить  </a>  </li><li class=""><span style="" class="button dropdown">  На аннулировании  <ul class="txt-left" data-action="dropdown-avoidance">  <li style="" class="level-2"><a href="#" class="" data-bind="click: doAction" data-action="accept-avoidance">Подтвердить</a></li>  <li style="" class="level-2"><a href="#" class="" data-bind="click: doAction" data-action="reject-avoidance">Отклонить</a></li>  </ul></span></li><li style="display: none" class="">  <a href="#" class="button primary" data-bind="click: doAction" data-action="edit" title="">  Редактировать  </a>  </li><li style="display: none" class="">  <a href="#" class="button primary" data-bind="click: doAction" data-action="process" title="">  Обработать  </a>  </li><li style="display: none" class="">  <a href="#" class="button tt tt-t" data-bind="click: doAction" data-action="payment-order-request" title="Сформировать платежное поручение">  Сформировать платеж  </a>  </li><li style="display: none" class="">  <a href="#" class="button" data-bind="click: doAction" data-action="reject-request" title="">  Отклонить  </a>  </li><li style="" class="">  <a href="#" class="button" data-bind="click: doAction" data-action="revoke" title="">  Отозвать  </a>  </li><li style="" class="">  <a href="#" class="button" data-bind="click: doAction" data-action="accept-revoke" title="">  Подтвердить отзыв  </a>  </li><li style="" class="">  <a href="#" class="button" data-bind="click: doAction" data-action="self-route" title="">  Взять на обработку  </a>  </li><li style="display: none" class="level-1">  <a href="#" class="tt tt-t" data-bind="click: doAction" data-action="create-package" title="Объединить в пакет">  <i class="icon-20 i-archive"></i>  </a>  </li><li style="display: none" class="level-1">  <a href="#" class="tt tt-t" data-bind="click: doAction" data-action="remove-from-package" title="Исключить из пакета">  <i class="icon-20 i-del"></i>  </a>  </li><li style="display: none" class="">  <a href="#" class="button danger" data-bind="click: doAction" data-action="delete" title="">  Удалить  </a>  </li><li style="display: none" class="">  <a href="#" class="button primary" data-bind="click: doAction" data-action="create-group" title="">  Объединить в группу  </a>  </li><li style="display: none" class="">  <a href="#" class="button" data-bind="click: doAction" data-action="send-email" title="">  Отправить e-mail  </a>  </li><li style="display: none" class="">  <a href="#" class="button primary" data-bind="click: doAction" data-action="create-request" title="">  Создать заявку  </a>  </li><li style="display: none" class="">  <a href="#" class="button" data-bind="click: doAction" data-action="cancel" title="">  Отменить  </a>  </li><li style="display: none" class="">  <a href="#" class="button primary" data-bind="click: doAction" data-action="batch-edit-route" title="">  Настроить  </a>  </li><li style="display: none" class="">  <a href="#" class="button primary" data-bind="click: doAction" data-action="copy-route" title="">  Копировать  </a>  </li><li style="" class="">  <a href="#" class="button" data-bind="click: doAction" data-action="recovery" title="">  Восстановить  </a>  </li><li style="display: none" class="">  <a href="#" class="button" data-bind="click: doAction" data-action="submit" title="">  Отправить  </a>  </li><li style="display: none" class="">  <a href="#" class="button" data-bind="click: doAction" data-action="activate" title="">  Активировать  </a>  </li><li style="display: none" class="">  <a href="#" class="button" data-bind="click: doAction" data-action="lock" title="">  Заблокировать  </a>  </li><li class="level-1"><span style="display: none" class=" dropdown">  <i class="icon-20 i-settings"></i>  <ul class="txt-left" data-action="dropdown-client-relation">  <li style="display: none" class="level-2"><a href="#" class="" data-bind="click: doAction" data-action="default">По умолчанию</a></li>  <li style="display: none" class="level-2"><a href="#" class="" data-bind="click: doAction" data-action="standard">Стандартные</a></li>  <li style="display: none" class="level-2"><a href="#" class="" data-bind="click: doAction" data-action="group-edit">Групповая настройка входящих типов документов</a></li>  <li style="display: none" class="level-2"><a href="#" class="" data-bind="click: doAction" data-action="edit-relation">Настроить</a></li>  </ul></span></li><li style="display: none" class="level-1">  <a href="#" class="tt tt-t" data-bind="click: doAction" data-action="change-document-types" title="Изменить признак типов документов">  <i class="icon-20 i-save"></i>  </a>  </li><li style="" class="">  <a href="#" class="button" data-bind="click: doAction" data-action="edit-documents-route" title="">  Изменить маршрут  </a>  </li></ul></nav>  <nav class="right"><ul class="menu-h"><li style="display: none" class="level-1">  <a href="#" class="tt tt-t" data-bind="click: doAction" data-action="print" title="Просмотр">  <i class="icon-20 i-doc"></i>  </a>  </li><li style="" class="level-1">  <a href="#" class="tt tt-t" data-bind="click: doAction" data-action="print-pdf" title="Просмотр">  <i class="icon-20 i-doc"></i>  </a>  </li><li style="" class="level-1">  <a href="#" class="tt tt-t" data-bind="click: doAction" data-action="trash" title="В корзину">  <i class="icon-20 i-trash"></i>  </a>  </li><li style="display: none" class="level-1">  <a href="#" class="tt tt-t" data-bind="click: doAction" data-action="download" title="Скачать документы">  <i class="icon-20 i-download"></i>  </a>  </li><li style="display: none" class="level-1">  <a href="#" class="tt tt-t" data-bind="click: doAction" data-action="excel" title="Экспорт в Excel">  <i class="icon-20 i-download"></i>  </a>  </li><li style="" class="level-1">  <a href="#" class="tt tt-t" data-bind="click: doAction" data-action="remove" title="Удалить">  <i class="icon-20 i-del"></i>  </a>  </li><li style="display: none" class="">  <a href="#" class="button danger" data-bind="click: doAction" data-action="right-delete" title="">  Удалить  </a>  </li><li style="display: none" class="">  <a href="#" class="button" data-bind="click: doAction" data-action="right-cancel" title="">  Отменить  </a>  </li><li style="display: none" class="">  <a href="#" class="button primary" data-bind="click: doAction" data-action="right-save" title="">  Сохранить  </a>  </li><li class="level-1 dropdown" data-bind="visible: isExportActionsVisible"><span><i class="icon-20 i-download"></i></span><ul class="pos-right"><li style="" class="level-2"><a href="#" data-bind="click: exportDocument" data-export-type="excel">Выгрузить в Excel</a></li><li style="" class="level-2"><a href="#" data-bind="click: exportDocument" data-export-type="download">Скачать документы</a></li><li style="display: none" class="level-2"><a href="#" data-bind="click: exportDocument" data-export-type="fns">Экспорт для ФНС</a></li><li style="" class="level-2"><a href="#" data-bind="click: exportDocument" data-export-type="all">Расширенный экспорт</a></li><li style="display: none" class="level-2"><a href="#" data-bind="click: exportDocument" data-export-type="sber">Экспорт в формате Сбербанка</a></li><li style="display: none" class="level-2"><a href="#" data-bind="click: exportDocument" data-export-type="invest">Экспорт по инвестпроектам</a></li></ul></li></ul></nav>  <div class="clear"></div></div></div>
+			</div>
+		</div><div class="k-pager-wrap k-grid-pager k-widget k-floatwrap" data-role="uipager" style=""><a href="#" aria-label="Перейти на первую страницу" title="Перейти на первую страницу" class="k-link k-pager-nav k-pager-first k-state-disabled" data-page="1" tabindex="-1"><span class="k-icon k-i-seek-w"></span></a><a href="#" aria-label="Перейти на предыдущую страницу" title="Перейти на предыдущую страницу" class="k-link k-pager-nav k-state-disabled" data-page="1" tabindex="-1"><span class="k-icon k-i-arrow-w"></span></a><ul class="k-pager-numbers k-reset"><li class="k-current-page"><span class="k-link k-pager-nav">1</span></li><li><span class="k-state-selected">1</span></li></ul><a href="#" aria-label="Перейти на следующую страницу" title="Перейти на следующую страницу" class="k-link k-pager-nav k-state-disabled" data-page="1" tabindex="-1"><span class="k-icon k-i-arrow-e"></span></a><a href="#" aria-label="Перейти на последнюю страницу" title="Перейти на последнюю страницу" class="k-link k-pager-nav k-pager-last k-state-disabled" data-page="1" tabindex="-1"><span class="k-icon k-i-seek-e"></span></a><span class="k-pager-info k-label">1 – 1 из 1</span><span class="k-pager-sizes k-label"><span class="k-widget k-combobox k-header v-combo" style=""><span tabindex="-1" unselectable="on" class="k-dropdown-wrap k-state-default"><input class="k-input v-combo" type="text" autocomplete="off" title="" role="combobox" aria-expanded="false" tabindex="0" aria-disabled="false" aria-autocomplete="list" aria-owns="" aria-busy="false" style="width: 100%;" /><span unselectable="on" class="k-select" aria-label="select" role="button" tabindex="-1"><span class="k-icon k-i-arrow-60-down"></span></span></span><input class="v-combo" data-role="uicombobox" aria-disabled="false" style="display: none;"><option>10</option><option>10</option></input></span>на странице</span></div></div></div>
+
+<script id="document-route-current-step-user-popup-template" type="text/x-kendo-template">
+    &lt;div id="docroute-content"&gt;&lt;/div&gt;
+</script>
+
+<script id="certificate-template" type="text/x-jsrender">
+  &lt;div id="certificate-tabs" class="tabs items"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#certificate-tabs-1"&gt;Сведения&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#certificate-tabs-2"&gt;Путь сертификации&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div id="#certificate-tabs-1"&gt;&lt;/div&gt;
+    &lt;div id="#certificate-tabs-2"&gt;
+      &lt;div class="inner"&gt;
+        &lt;label class="label"&gt;Путь сертификации:&lt;/label&gt;
+        &lt;div class="scroll-info item" style="height: 80px;"&gt;
+          &lt;ul class="certificates"&gt;
+            {{for d}}
+            &lt;li&gt;
+              {{if level &gt; 0}}
+              &lt;i class="icon-20 i-level-last" style="margin-left: {{:margin}}px;"&gt;&lt;/i&gt;
+              {{/if}}
+              &lt;i class="icon-20 {{if valid}}i-cert-valid{{else}}i-cert-invalid{{/if}}"&gt;&lt;/i&gt;
+              &lt;a index="{{:i}}" href="#"&gt;{{&gt;subject}}&lt;/a&gt;
+            &lt;/li&gt;
+            {{/for}}
+          &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;label class="label"&gt;Состояние сертификата:&lt;/label&gt;
+        &lt;div class="scroll-info" style="height: 108px;"&gt;
+          &lt;div class="cert-info-short"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</script>
+
+<script id="certificate-details-template" type="text/x-jsrender">
+  &lt;div class="inner"&gt;
+    &lt;div class="scroll-info"&gt;
+
+      &lt;p&gt;
+        &lt;strong&gt;Владелец сертификата:&lt;/strong&gt;
+        {{for subject}}&lt;br /&gt;
+        {{:#data}}
+        {{/for}}
+      &lt;/p&gt;
+
+      &lt;p&gt;
+        &lt;strong&gt;Издатель сертификата:&lt;/strong&gt;
+        {{for issuer}}&lt;br /&gt;
+        {{:#data}}
+        {{/for}}
+      &lt;/p&gt;
+
+      &lt;p&gt;
+        &lt;strong&gt;Серийный номер:&lt;/strong&gt;&lt;br /&gt;
+        {{:serialNumber}}
+      &lt;/p&gt;
+
+      &lt;p&gt;
+        &lt;strong&gt;Срок действия сертификата:&lt;/strong&gt;&lt;br /&gt;
+        Действителен с {{:notBefore}} по {{:notAfter}}
+      &lt;/p&gt;
+      
+
+      &lt;p&gt;
+        &lt;strong&gt;Алгоритм подписи:&lt;/strong&gt;&lt;br /&gt;
+        {{:algorithm}}
+      &lt;/p&gt;
+
+      {{if subjectKeyIdentifier}}
+      &lt;p&gt;
+        &lt;strong&gt;Идентификатор ключа субъекта:&lt;/strong&gt;&lt;br /&gt;
+        &lt;span class="txt-monospace"&gt;{{:subjectKeyIdentifier}}&lt;/span&gt;
+      &lt;/p&gt;
+      {{/if}}
+
+      &lt;p&gt;
+        &lt;strong&gt;Отпечаток сертификата:&lt;/strong&gt;&lt;br /&gt;
+        &lt;span class="txt-monospace"&gt;{{:thumbprint}}&lt;/span&gt;
+      &lt;/p&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+</script>
+
+<script id="certificate-status-template" type="text/x-jsrender">
+  &lt;strong&gt;{{:status}}&lt;/strong&gt;
+  {{for info}}
+  &lt;div&gt;{{:#data}}&lt;/div&gt;
+  {{/for}}
+</script>
+
+<script id="document-status-history-template" type="text/x-kendo-template">
+  # if (history.groups.length == 0) { #
+  &lt;div class="empty-notify txt-center"&gt;Нет данных для отображения&lt;/div&gt;
+  # } else { #
+  &lt;div&gt;
+    # var group, person, personAction; #
+    # for (var i = 0; i &lt; history.groups.length; i++) { #
+    # group = history.groups[i]; #
+    &lt;div class="inner first"&gt;
+      &lt;div class="stat-info"&gt;
+        &lt;span class="${ui.enums.Participant[group.participant].toLowerCase()}"&gt;
+          &lt;i class="icon-20 i-${ui.enums.Participant[group.participant].toLowerCase()} i-label"&gt;&lt;/i&gt;&lt;span&gt; ${group.companyName}&lt;/span&gt;
+        &lt;/span&gt;
+        # for (var j = 0; j &lt; group.history.length; j++) { #
+        # person = group.history[j]; #
+        &lt;div&gt;
+          &lt;span class="${ui.enums.Participant[group.participant].toLowerCase()}"&gt;${person.personName}&lt;/span&gt;
+        &lt;/div&gt;
+        # for (var k = 0; k &lt; person.history.length; k++) { #
+        # personAction = person.history[k]; #
+        &lt;div&gt;
+          &lt;i class="icon-20 i-level${((k == person.history.length-1) ? '-last' : '')} "&gt;&lt;/i&gt;${personAction.statusName}
+          &lt;span class="txt-gray"&gt;${ui.utils.parse.date(personAction.date, "G")}&lt;/span&gt;
+          # if (personAction.comment) { #
+          &lt;div data-role="uireadmore" class="txt-gray paddleft-40"&gt;${personAction.comment}&lt;/div&gt;
+          # } #
+        &lt;/div&gt;
+        # } #
+        # } #
+      &lt;/div&gt;
+    &lt;/div&gt;
+    # } #
+  &lt;/div&gt;
+  # } #
+</script>
+
+<script id="document-status-template" type="text/x-kendo-template">
+
+  # if (hrefToPackageButton.isVisible()) { #
+    &lt;a href="${packageUrl}" class="button"&gt;${hrefToPackageButton.getButtonCaptionDaysLeftString()}&lt;/a&gt;
+  # } else { #
+
+    # if (isActionButtonExist) { #
+
+      # for ( var i = 0; i &lt; primaryActionButtons.length; i++ ) { #
+        # var actionButton = primaryActionButtons[i] #
+        # if ( !actionButton.isExceeded() ) { #
+          &lt;a href="\#" class="button ${actionButton.buttonClass}" data-bind="click: onActionClick" data-action="${actionButton.dataAction}"&gt;${actionButton.getButtonCaptionDaysLeftString()}&lt;/a&gt;
+        # } else { #
+          &lt;a href="\#" class="button button warning tt tt-t" title="${actionButton.getDaysExceededTitle()}" data-bind="click: onActionClick" data-action="${actionButton.dataAction}"&gt;${actionButton.getButtonCaptionString()}&lt;/a&gt;
+        # } #
+      # } #
+
+      # if ( avoidanceActionButtons.length &gt; 0 ) { #
+        &lt;span class="button dropdown"&gt;
+          &lt;span&gt;На аннулировании&lt;/span&gt;
+            &lt;ul class="txt-left"&gt;
+            # for ( var i = 0; i &lt; avoidanceActionButtons.length; i++ ) { #
+              &lt;li class="level-2"&gt;
+                &lt;a href="\#" data-bind="click: onActionClick" data-action="${avoidanceActionButtons[i].dataAction}"&gt;${avoidanceActionButtons[i].caption}&lt;/a&gt;
+              &lt;/li&gt;
+            # } #
+          &lt;/ul&gt;
+        &lt;/span&gt;
+      # } #
+
+    # } else { #
+      # if ( isLessMode ) { #
+        &lt;a href="\#" class="tag" data-bind="click: onStatusHistoryClick"&gt;&lt;span&gt;${statusName}&lt;/span&gt;&lt;/a&gt;
+      # } else { #
+        &lt;span class="tag"&gt;${statusName}&lt;/span&gt;
+      # } #
+
+    # } #
+  # } #
+
+</script>
+
+<script id="document-package-link-template" type="text/x-kendo-template">
+  &lt;span&gt;
+    &lt;small class="txt-gray"&gt;в составе пакета
+      &lt;a href="${packageUrl}" title="Карточка пакета" class="tt tt-t"&gt;${packageName}&lt;/a&gt;
+    &lt;/small&gt;
+  &lt;/span&gt;
+</script>
+
+</div><!-- #container-->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- #container-->
+        </div>
+      </div>
+    </div><!-- Content-box -->
+  </div>
+
+      
+
+  <div id="form-container" class="preview-box" style="display: none;">
+        
+  </div>
+
+  
+  <script id="abonentDropDownTemplate" type="text/x-kendo-template">
+    ${name}
+    &lt;small class="width-100"&gt;${inn}${(kpp !== null ? " / " + kpp : "")}&lt;/small&gt;
+  </script>
+
+  <script id="routeStageParticipantTemplate" type="text/x-kendo-template">
+    &lt;small&gt;${displayValue}&lt;/small&gt;
+  </script>
+
+  <script id="routeStageParticipantTemplateWithCert" type="text/x-kendo-template">
+    &lt;span&gt;
+      #if(data.hasCertificate()){#
+      #if(data.isValidCertificate()) {#
+      &lt;i class="icon-20 i-cert-valid tt tt-t" title="Активный сертификат"&gt;&lt;/i&gt;&amp;nbsp;
+      #} else {#
+      &lt;i class="icon-20 i-cert-invalid tt tt-t" title="Сертификат просрочен"&gt;&lt;/i&gt;&amp;nbsp;
+      #}#
+      #}#
+      &lt;small&gt;${displayValue}&lt;/small&gt;
+    &lt;/span&gt;
+  </script>
+
+  <script id="attributeDropDownTemplate" type="text/x-kendo-template">
+    &lt;span class="icon-required"&gt;#if (data.forConcreteDocumentType &amp;&amp; data.isSelectOnly) { #*# }#&lt;/span&gt;
+    ${data.name}
+  </script>
+
+  
+
+
+  
+
+  <script src="/scripts/adrum.js"></script>
+
+
+  
+  
+  <script type="text/javascript">
+    $(function() {
+      new ui.view.NotificationBlock().init();
+
+      /** Отображаем placeholder для IE9 */
+      if (ui.utils.getBrowserType() === ui.enums.BrowserType.Ie9) {
+        $('input, textarea').placeholder();
+      }
+    });
+  </script>
+
+<script id="documentGridRowTemplate" type="text">&lt;tr role="row" class="k-grid-row" data-uid="${uid}"&gt;&lt;td class="check-row"&gt;&lt;input type="checkbox" class="k-checkbox check-line" id="doc-selector-${uid}"&gt;&lt;label for="doc-selector-${uid}" class="k-checkbox-label"&gt;&amp;nbsp;&lt;/label&gt;&lt;/td&gt;&lt;td&gt; #= renderFavoriteAction() # &lt;/td&gt;&lt;td class="txt-gray"&gt;&lt;span class="tt tt-t" title="Запись создана ${(ui).utils.parse.date(created, 'GT')}"&gt;${(ui).utils.parse.date(created, "d")}&lt;/span&gt;&lt;/td&gt;&lt;td&gt; #= renderDocflowStatus() # &lt;/td&gt;&lt;td&gt;&lt;div class="right txt-right"&gt; #= renderStatus(data) # &lt;/div&gt; #= renderDescription() #  #= renderPackageLink(data) #  #= renderComment() #  #= renderParticipants() #  #= renderSums() #  #= renderPaymentOrder() # &lt;div class="clear"&gt;&lt;/div&gt;&lt;/td&gt;&lt;td&gt; #= renderGearMenu() # &lt;/td&gt;&lt;/tr&gt;</script><div class="k-list-container k-popup k-group k-reset" data-role="popup" style="display: none; position: absolute;"><div class="k-group-header" style="display:none"></div><div class="k-list-scroller" unselectable="on"><ul unselectable="on" class="k-list k-reset" tabindex="-1" aria-hidden="true" aria-live="off" data-role="staticlist" role="listbox"><li tabindex="-1" role="option" unselectable="on" class="k-item k-state-selected" data-offset-index="0">10</li><li tabindex="-1" role="option" unselectable="on" class="k-item" data-offset-index="1">20</li><li tabindex="-1" role="option" unselectable="on" class="k-item" data-offset-index="2">50</li><li tabindex="-1" role="option" unselectable="on" class="k-item" data-offset-index="3">100</li></ul></div></div><script id="participantItemTemplate" type="text">${name} &lt;small class="width-100"&gt;${inn}${(kpp ? " / " + kpp : "")}&lt;/small&gt;</script><script id="onProcessFilterPartItemTemplate" type="text">&lt;span&gt;${displayParticipantName()}&lt;/span&gt;</script><script id="routeParticipantItemTemplate" type="text">${name}${isRole ? "" :' (' + login + ')'}</script><div class="k-list-container k-popup k-group k-reset" data-role="popup" style="display: none; position: absolute;"><span class="k-list-filter"><input class="k-textbox" role="listbox" aria-haspopup="true" aria-expanded="false" aria-owns="" aria-disabled="false" /><span class="k-icon k-i-zoom"></span></span><div class="k-list-optionlabel">Все</div><div class="k-group-header" style="display:none"></div><div class="k-list-scroller" unselectable="on"><ul unselectable="on" class="k-list k-reset" tabindex="-1" aria-hidden="true" aria-live="polite" data-role="staticlist" role="listbox"></ul></div></div><div class="k-list-container k-popup k-group k-reset" data-role="popup" style="display: none; position: absolute;"><span class="k-list-filter"><input class="k-textbox" role="listbox" aria-haspopup="true" aria-expanded="false" aria-owns="" aria-disabled="false" tabindex="0" /><span class="k-icon k-i-zoom"></span></span><div class="k-list-optionlabel">ИНН, КПП, ОГРН или наименование</div><div class="k-group-header" style="display:none"></div><div class="k-list-scroller" unselectable="on"><ul unselectable="on" class="k-list k-reset" tabindex="-1" aria-hidden="true" aria-live="polite" data-role="staticlist" role="listbox"></ul></div></div><div class="k-list-container k-popup k-group k-reset" data-role="popup" style="display: none; position: absolute;"><div class="k-list-optionlabel k-state-selected k-state-focused" id="2fcfabbd-c2b8-431f-b646-1a0f65a98a1c">Все</div><div class="k-group-header" style="display:none"></div><div class="k-list-scroller" unselectable="on"><ul unselectable="on" class="k-list k-reset" tabindex="-1" aria-hidden="true" aria-live="off" data-role="staticlist" role="listbox"><li tabindex="-1" role="option" unselectable="on" class="k-item" data-offset-index="0">Исходящие</li><li tabindex="-1" role="option" unselectable="on" class="k-item" data-offset-index="1">Входящие</li></ul></div></div><div class="k-list-container k-popup k-group k-reset" data-role="popup" style="display: none; position: absolute;"><span class="k-list-filter"><input class="k-textbox" role="listbox" aria-haspopup="true" aria-expanded="false" aria-owns="" aria-disabled="false" /><span class="k-icon k-i-zoom"></span></span><div class="k-list-optionlabel">Все</div><div class="k-group-header" style="display:none"></div><div class="k-list-scroller" unselectable="on"><ul unselectable="on" class="k-list k-reset" tabindex="-1" aria-hidden="true" aria-live="polite" data-role="staticlist" role="listbox"></ul></div></div><div class="k-list-container k-popup k-group k-reset" data-role="popup" style="display: none; position: absolute;"><div class="k-list-optionlabel k-state-selected k-state-focused" id="6259520c-cb85-4adb-9b02-e7d949e700fd">Все</div><div class="k-group-header" style="display:none"></div><div class="k-list-scroller" unselectable="on"><ul unselectable="on" class="k-list k-reset" tabindex="-1" aria-hidden="true" aria-live="off" data-role="staticlist" role="listbox"><li tabindex="-1" role="option" unselectable="on" class="k-item" data-offset-index="0">Не оплачен</li><li tabindex="-1" role="option" unselectable="on" class="k-item" data-offset-index="1">Оплачен</li></ul></div></div><div class="k-list-container k-popup k-group k-reset" data-role="popup" style="display: none; position: absolute;"><div class="k-list-optionlabel k-state-selected k-state-focused" id="dc277cfd-b581-484a-80d9-7ac160c32afb">Все</div><div class="k-group-header" style="display:none"></div><div class="k-list-scroller" unselectable="on"><ul unselectable="on" class="k-list k-reset" tabindex="-1" aria-hidden="true" aria-live="off" data-role="staticlist" role="listbox"><li tabindex="-1" role="option" unselectable="on" class="k-item" data-offset-index="0">Не завершен</li><li tabindex="-1" role="option" unselectable="on" class="k-item" data-offset-index="1">Завершен</li></ul></div></div><div class="k-list-container k-popup k-group k-reset hide-selected-items" data-role="popup" style="display: none; position: absolute;"><div class="k-group-header" style="">Пользователи</div><div class="k-list-scroller" unselectable="on"><ul unselectable="on" class="k-list k-reset" tabindex="-1" aria-hidden="true" aria-live="polite" data-role="staticlist" role="listbox"><li tabindex="-1" role="option" unselectable="on" class="k-item k-state-focused" data-offset-index="0" id="8d841a16-b924-4efa-8a93-1013a14c0815"><span>Пелевин Виктор Олегович (U202)</span></li><li tabindex="-1" role="option" unselectable="on" class="k-item" data-offset-index="1"><span>Тусеева Мила Николаевна (U203)</span></li><li tabindex="-1" role="option" unselectable="on" class="k-item k-first" data-offset-index="2"><span>Бухгалтер</span><div class="k-group">Группы</div></li><li tabindex="-1" role="option" unselectable="on" class="k-item" data-offset-index="3"><span>Руководитель</span></li><li tabindex="-1" role="option" unselectable="on" class="k-item" data-offset-index="4"><span>Сотрудник</span></li></ul></div></div><div class="k-list-container k-popup k-group k-reset hide-selected-items" data-role="popup" style="display: none; position: absolute;"><div class="k-group-header" style=""></div><div class="k-list-scroller" unselectable="on"><ul unselectable="on" class="k-list k-reset" tabindex="-1" aria-hidden="true" aria-live="polite" data-role="staticlist" role="listbox"></ul></div></div><script id="notificationListTemplate" type="text">&lt;li&gt;${message} # for(var i = 0; i &lt; actions.length; i++) { # &lt;a href="${actions[i].actionLink}" id="lkk-notification-action-${i}" class="button"&gt;${actions[i].actionText} &lt;/a&gt; # } # &lt;/li&gt;</script><script id="notificationListActionsTemplate" type="text">undefined</script><div aria-hidden="true" class="k-calendar-container k-popup k-group k-reset" id="fromDate_dateview" data-role="popup" style="display: none; position: absolute;"></div><div aria-hidden="true" class="k-calendar-container k-popup k-group k-reset" id="toDate_dateview" data-role="popup" style="display: none; position: absolute;"></div><div aria-hidden="true" class="k-calendar-container k-popup k-group k-reset" id="fromDate_dateview" data-role="popup" style="display: none; position: absolute;"></div><div aria-hidden="true" class="k-calendar-container k-popup k-group k-reset" id="toDate_dateview" data-role="popup" style="display: none; position: absolute;"></div><div aria-hidden="true" class="k-calendar-container k-popup k-group k-reset" id="fromDate_dateview" data-role="popup" style="display: none; position: absolute;"></div><div aria-hidden="true" class="k-calendar-container k-popup k-group k-reset" id="toDate_dateview" data-role="popup" style="display: none; position: absolute;"></div></body></html>

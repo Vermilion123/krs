@@ -84,7 +84,7 @@ public class NewDocTest {
 
     }
     
-    @Test
+    @Test (enabled=false)
     
    
     
@@ -92,12 +92,12 @@ public class NewDocTest {
 	 public void LoginCourier(){
           $("#IDToken1").sendKeys(log1);
           $("#IDToken2").sendKeys(pass1);
-          $(By.name("Login.Submit")).click();
+          $("[ng-click=\"doLogin()\"]").click();
       }
 	
-	@Test 
+	@Test (enabled=false)
 	  
-    public void New_Doc_DEFAULT(){
+    public void New_Doc_Test_Fields(){
 		double a = Math.random();
 		doc_num = String.valueOf(a).substring(2, 7);
 		$(By.xpath("//a[@href='/document/new']")).click();
@@ -151,7 +151,7 @@ public class NewDocTest {
     	$(By.xpath("//div[@id='document-card-toolBar-container']/div/div/div/div/nav/ul/li[7]/a[@data-action=\"save\"]")).click();
     }
 	
-	@Test 
+	@Test (enabled=false)
 	
 	 public void Search_by_infofields(){
 		$("[href=\"/documents#?f=13\"]").click();
@@ -162,15 +162,11 @@ public class NewDocTest {
 		$(By.xpath("//div[@id='raw-container']/dt/input")).val("First_key");
 		$(By.xpath("//div[@id='raw-container']/dd/input")).val("Value_key_"+doc_num);
 		$(By.xpath("//input[@type=\"submit\"]")).click();
-		sleep(2000);
-	}
-	
-	@Test
-	
-	public void delete_infofields_from_doc(){
+		sleep(1000);
 		$(By.xpath("descendant-or-self::a[contains(text(),'"+doc_num+"')]")).click();
 		$("#documentEditable").click();
 		$("#edit-doc").click();
+		sleep(1000);
 		$(By.xpath("//dd[@id='dopInfo']/form/ul/li/span/form/span[1]/input[1]")).val("");
     	$(By.xpath("//dd[@id='dopInfo']/form/ul/li/span/form/span[2]/input[1]")).val("");
 		$(By.xpath("//div[@id='toolBar-form-container']/div/div/div/div/nav/ul/li[7]/a[@data-action=\"save\"]")).click();
@@ -178,9 +174,9 @@ public class NewDocTest {
     	$(By.xpath("//div[@id='document-card-toolBar-container']/div/div/div/div/nav/ul/li[7]/a[@data-action=\"save\"]")).click();
 	}
 	
-	@Test 
+	@Test (enabled=false)
 	
-	 public void Search_by_infofields_del(){
+	 public void Search_inf_after_del(){
 		$("[href=\"/documents#?f=13\"]").click();
 		$(By.xpath("//span[contains(text(),\"Расширенный поиск\")]")).click();
 		sleep(1000);

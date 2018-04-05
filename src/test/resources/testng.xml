@@ -8,6 +8,8 @@
             <classes>
                 <class name="NewDocTest">
                 </class>
+				<class name="InfoFields">
+                </class>
 				
             </classes>
 
