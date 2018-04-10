@@ -20,3 +20,5 @@
 [0410/000719.788:ERROR:file_io_win.cc(161)] CreateFile C:\Users\Tuseeva.MN\AppData\Local\Temp\scoped_dir7992_5214\Crashpad\settings.dat: Системе не удается найти указанный путь. (0x3)
 [0410/000719.876:ERROR:file_io_win.cc(170)] CreateFile C:\Users\Tuseeva.MN\AppData\Local\Temp\scoped_dir7992_5214\Crashpad\reports\8bc5ced9-eb5a-43a3-b46f-655a71aa080d.dmp: Системе не удается найти указанный путь. (0x3)
 [0410/000719.876:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0410/142014.442:ERROR:file_io_win.cc(161)] CreateFile C:\Users\Tuseeva.MN\AppData\Local\Temp\scoped_dir2444_16458\Crashpad\settings.dat: Не удается найти указанный файл. (0x2)
+[0410/142951.559:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports

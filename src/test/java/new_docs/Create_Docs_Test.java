@@ -77,8 +77,11 @@ public class Create_Docs_Test {
 	 public void New_UPD_SCHF(){
 		 
 	//  crd = new Create_Docs("UPD_SCHF","УПД. Счет-фактура",cmp_name_search_key,false);
-	 // crd = new Create_Docs(getWebDriver() ,"UPD_DOP","УПД. Документ об отгрузке товаров",cmp_name_search_key,false);
-	  crd = new Create_Docs(getWebDriver() ,"UPD_SF_DOP","Счет-фактура и документ об отгрузке товаров",cmp_name_search_key,false);
+	//  crd = new Create_Docs(getWebDriver() ,"UPD_DOP","УПД. Документ об отгрузке товаров",cmp_name_search_key,false);
+	//  crd = new Create_Docs(getWebDriver() ,"UPD_SF_DOP","Счет-фактура и документ об отгрузке товаров",cmp_name_search_key,false);
+	//  crd = new Create_Docs(getWebDriver() ,"UCD_CSF","УКД. Корректировочный счет-фактура",cmp_name_search_key,false);
+	//	crd = new Create_Docs(getWebDriver() ,"UCD_DIC","УКД. Документ об изменении стоимости отгруженных товаров",cmp_name_search_key,false);
+	    crd = new Create_Docs(getWebDriver() ,"UCD_CSF_DIC","УКД. Корректировочный счет-фактура и документ об изменении",cmp_name_search_key,false);
 	  
 	 }
 
