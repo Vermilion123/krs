@@ -6,11 +6,14 @@
     <test name="ChromeTest">
         <parameter name="browser" value="Chrome" />
             <classes>
-                <class name="NewDocTest">
+                 <class name="NewDocTest">
                 </class>
 				<class name="InfoFields">
+                </class> 
+                <class name="Create_Docs">
                 </class>
-				
+				<class name="Create_Docs_Test">
+                </class>
             </classes>
 
     </test>

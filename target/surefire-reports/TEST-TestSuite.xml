@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestSuite" time="16.371" tests="3" errors="0" skipped="0" failures="1">
+<testsuite name="TestSuite" time="16.861" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="9.0.4+11"/>
@@ -28,7 +28,7 @@
     <property name="os.name" value="Windows 10"/>
     <property name="classworlds.conf" value="C:\Program Files\Apache\maven\bin\..\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1251"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-9.0.4\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-9.0.4\bin;C:\Program Files\Apache\maven\bin;C:\geckodriver\;C:\chromedriver_win32\;C:\Program Files\Firefox Nightly\;C:\Users\Tuseeva.MN\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code\bin;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-9.0.4\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\Tuseeva.MN\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-9.0.4\bin;C:\Program Files\Apache\maven\bin;C:\geckodriver\;C:\chromedriver_win32\;C:\Program Files\Firefox Nightly\;C:\Program Files\dotnet\;C:\Program Files (x86)\PICT\;C:\Users\Tuseeva.MN\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code\bin;."/>
     <property name="maven.conf" value="C:\Program Files\Apache\maven\bin\../conf"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="53.0"/>
@@ -43,10 +43,10 @@
     <property name="java.specification.version" value="9"/>
     <property name="user.name" value="Tuseeva.MN"/>
     <property name="java.class.path" value="C:\Program Files\Apache\maven\bin\..\boot\plexus-classworlds-2.5.2.jar"/>
-    <property name="server" value="demo"/>
+    <property name="server" value="test"/>
     <property name="java.vm.specification.version" value="9"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dserver=demo test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dserver=test test"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-9.0.4"/>
     <property name="user.language" value="ru"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -64,37 +64,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="LoginCourier" classname="InfoFields" time="4.518"/>
-  <testcase name="Search_by_infofields" classname="InfoFields" time="7.785">
-    <failure message="Element not found {By.xpath: descendant-or-self::a[contains(text(),&apos;null&apos;)]}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: Element not found {By.xpath: descendant-or-self::a[contains(text(),'null')]}
-Expected: visible
-	at jdk.internal.reflect.GeneratedConstructorAccessor8.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:29)
-	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:56)
-	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:44)
-	at com.codeborne.selenide.impl.WebElementSource.findAndAssertElementIsVisible(WebElementSource.java:72)
-	at com.codeborne.selenide.commands.Click.execute(Click.java:16)
-	at com.codeborne.selenide.commands.Click.execute(Click.java:12)
-	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
-	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:87)
-	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:63)
-	at com.sun.proxy.$Proxy8.click(Unknown Source)
-	at InfoFields.Search_by_infofields(InfoFields.java:162)
-</failure>
-  </testcase>
-  <testcase name="Search_inf_after_del" classname="InfoFields" time="4.068"/>
+  <testcase name="LoginCourier" classname="Create_Docs_Test" time="3.37"/>
+  <testcase name="New_UPD_SCHF" classname="Create_Docs_Test" time="13.491"/>
 </testsuite>

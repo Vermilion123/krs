@@ -13,7 +13,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.testng.internal.PropertyUtils;
+
 
 import com.codeborne.selenide.Configuration;
 
@@ -22,7 +22,6 @@ import static com.codeborne.selenide.Condition.*;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Properties;
 import java.util.Random;
 
 
@@ -33,7 +32,7 @@ public class NewDocTest {
 	
     protected WebDriver driver;
 	 
-    protected NewDocFunc page;
+    
     
     protected String server;
     

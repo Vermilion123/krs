@@ -31,7 +31,7 @@ public class InfoFields {
 	
     protected WebDriver driver;
 	 
-    protected NewDocFunc page;
+    
     
     protected String server;
     
@@ -85,7 +85,7 @@ public class InfoFields {
     
     	
 	
-	@Test 
+	@Test  (enabled=false)
 	
 	public void LoginCourier(){
         $("#IDToken1").sendKeys(log1);
@@ -93,7 +93,7 @@ public class InfoFields {
         $("[ng-click=\"doLogin()\"]").click();
     }
 	  
-	@Test 
+	@Test  (enabled=false)
 	
     public void New_Doc_UPD_SCHF(){
 		double a = Math.random();
@@ -136,7 +136,7 @@ public class InfoFields {
     	$(By.xpath("//div[@id='document-card-toolBar-container']/div/div/div/div/nav/ul/li[7]/a[@data-action=\"save\"]")).click();
     }
 	
-	@Test 
+	@Test  (enabled=false)
 	
 	 public void Search_by_infofields(){
 		$("[href=\"/documents#?f=13\"]").click();
@@ -177,7 +177,7 @@ public class InfoFields {
     	$(By.xpath("//div[@id='document-card-toolBar-container']/div/div/div/div/nav/ul/li[7]/a[@data-action=\"save\"]")).click();
 	}
 	
-	@Test 
+	@Test  (enabled=false)
 	
 	 public void Search_inf_after_del(){
 		$("[href=\"/documents#?f=13\"]").click();
