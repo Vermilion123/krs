@@ -1,7 +1,6 @@
-Create_Docs.class
-SampleTest.class
-StaticParameters.class
-Create_Docs_Test.class
+AuthFunc.class
+CreateDocs.class
+AuthTest.class
+CreateDocsTest.class
 InfoFields.class
 NewDocTest.class
-NewDocFunc.class

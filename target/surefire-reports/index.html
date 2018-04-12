@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,12 +101,17 @@
                     <div class="method-list-content passed suite-TestSuite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-TestSuite" title="Create_Docs_Test" class="method navigator-link" hash-for-method="LoginCourier">LoginCourier</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-TestSuite" title="AuthTest" class="method navigator-link" hash-for-method="LoginCourier">LoginCourier</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-TestSuite" title="Create_Docs_Test" class="method navigator-link" hash-for-method="New_UPD_SCHF">New_UPD_SCHF</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-TestSuite" title="NewDocTest" class="method navigator-link" hash-for-method="New_Doc_Form_Test">New_Doc_Form_Test</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-TestSuite" title="CreateDocsTest" class="method navigator-link" hash-for-method="New_UPD_SCHF">New_UPD_SCHF</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-TestSuite -->
@@ -124,7 +129,22 @@
           <div class="suite-TestSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">Create_Docs_Test</span>
+              <span class="class-name">CreateDocsTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="New_UPD_SCHF">
+                  </a> <!-- New_UPD_SCHF -->
+                  <span class="method-name">New_UPD_SCHF</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TestSuite-class-passed -->
+          <div class="suite-TestSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">AuthTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -134,11 +154,19 @@
                   <span class="method-name">LoginCourier</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TestSuite-class-passed -->
+          <div class="suite-TestSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">NewDocTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="New_UPD_SCHF">
-                  </a> <!-- New_UPD_SCHF -->
-                  <span class="method-name">New_UPD_SCHF</span>
+                  <a name="New_Doc_Form_Test">
+                  </a> <!-- New_Doc_Form_Test -->
+                  <span class="method-name">New_Doc_Form_Test</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -156,10 +184,12 @@
   &lt;test name=&quot;ChromeTest&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
     &lt;classes&gt;
+      &lt;class name=&quot;AuthFunc&quot;/&gt;
+      &lt;class name=&quot;AuthTest&quot;/&gt;
       &lt;class name=&quot;NewDocTest&quot;/&gt;
       &lt;class name=&quot;InfoFields&quot;/&gt;
-      &lt;class name=&quot;Create_Docs&quot;/&gt;
-      &lt;class name=&quot;Create_Docs_Test&quot;/&gt;
+      &lt;class name=&quot;CreateDocs&quot;/&gt;
+      &lt;class name=&quot;CreateDocsTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- ChromeTest --&gt;
 &lt;/suite&gt; &lt;!-- TestSuite --&gt;
@@ -173,7 +203,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">ChromeTest (4 classes)</span>
+                <span class="test-name">ChromeTest (6 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -199,20 +229,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'New_UPD_SCHF')
-data.setCell(0, 2, 'Create_Docs_Test')
-data.setCell(0, 3, 13494);
+data.setCell(0, 2, 'CreateDocsTest')
+data.setCell(0, 3, 14073);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'LoginCourier')
-data.setCell(1, 2, 'Create_Docs_Test')
-data.setCell(1, 3, 3370);
+data.setCell(1, 2, 'AuthTest')
+data.setCell(1, 3, 3213);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'New_Doc_Form_Test')
+data.setCell(2, 2, 'NewDocTest')
+data.setCell(2, 3, 2268);
 window.suiteTableData['TestSuite']= { tableData: data, tableDiv: 'times-div-TestSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 16 seconds</span>
+              <span class="suite-total-time">Total running time: 19 seconds</span>
               <div id="times-div-TestSuite">
               </div> <!-- times-div-TestSuite -->
             </div> <!-- times-div -->
@@ -227,9 +261,24 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-TestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">8 ignored methods</span>
+            <span class="header-content">11 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">CreateDocsTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">New_UCD_DIC</span>
+                <br/>
+                <span class="ignored-method-name">New_UCD_CSF_DIC</span>
+                <br/>
+                <span class="ignored-method-name">New_UPD_DOP</span>
+                <br/>
+                <span class="ignored-method-name">New_UPD_SF_DOP</span>
+                <br/>
+                <span class="ignored-method-name">New_UCD_CSF</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
             <div class="ignored-class-div">
               <span class="ignored-class-name">InfoFields</span>
               <div class="ignored-methods-div">
@@ -246,13 +295,9 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">NewDocTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">LoginCourier</span>
-                <br/>
                 <span class="ignored-method-name">Search_by_infofields</span>
                 <br/>
                 <span class="ignored-method-name">Search_inf_after_del</span>
-                <br/>
-                <span class="ignored-method-name">New_Doc_Test_Fields</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -264,18 +309,28 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Create_Docs_Test</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">AuthTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup(Chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">LoginCourier</span>
-                <span class="method-start">5423 ms</span>
+                <span class="method-start">9636 ms</span>
               </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">NewDocTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">New_Doc_Form_Test</span>
+                <span class="method-start">12850 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">CreateDocsTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">New_UPD_SCHF</span>
-                <span class="method-start">8793 ms</span>
+                <span class="method-start">15119 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

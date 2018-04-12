@@ -6,13 +6,17 @@
     <test name="ChromeTest">
         <parameter name="browser" value="Chrome" />
             <classes>
-                 <class name="NewDocTest">
+            	<class name="AuthFunc">
+                </class>
+        	    <class name="AuthTest">
+                </class>
+                  <class name="NewDocTest">
                 </class>
 				<class name="InfoFields">
                 </class> 
-                <class name="Create_Docs">
+                <class name="CreateDocs">
                 </class>
-				<class name="Create_Docs_Test">
+				<class name="CreateDocsTest">
                 </class>
             </classes>
 

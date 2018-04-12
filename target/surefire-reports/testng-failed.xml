@@ -5,12 +5,16 @@
   <test parallel="tests" name="ChromeTest(failed)">
     <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="Create_Docs_Test">
+      <class name="CreateDocsTest">
         <methods>
-          <include name="setup"/>
           <include name="New_UPD_SCHF"/>
         </methods>
-      </class> <!-- Create_Docs_Test -->
+      </class> <!-- CreateDocsTest -->
+      <class name="AuthTest">
+        <methods>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- AuthTest -->
     </classes>
   </test> <!-- ChromeTest(failed) -->
 </suite> <!-- Failed suite [TestSuite] -->
