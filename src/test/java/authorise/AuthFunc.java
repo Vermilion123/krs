@@ -9,7 +9,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -51,12 +53,7 @@ public class AuthFunc {
           		if (scanner.hasNext(pattern))
           		credet = scanner.nextLine().split(";");j++;
           		scanner.nextLine();
-          	}
-          	
-        //	for(int i=0; i < credet.length; i++)
-        //			if(server.equals(credet[i][0])) {log1 = credetials[i][1]; pass1 = credetials[i][2]; cmp_name_search_key = credetials[i][3];}
-        	
-          	 }
+          	}}
           	 catch (FileNotFoundException e) {
           		    e.printStackTrace();
           		} catch (IOException e) {
@@ -65,6 +62,30 @@ public class AuthFunc {
       	return credet;
           	
   	}
+    
+    public Map< String, String > Get_Docs_File_Paths(String f_path)
+    {
+    	Map< String, String > docs_paths = new HashMap< String, String >();
+    	String[] temp_arr = new String[3];
+      	try {
+          	Path filePath = Paths.get(f_path);
+          	 
+          	
+          	Scanner scanner = new Scanner(filePath);
+          	int j = 0; Pattern pattern = Pattern.compile(".*"+server+".*");
+          	while (scanner.hasNext()) {
+          		if (scanner.hasNext(pattern))
+          			temp_arr = scanner.nextLine().split(";");
+          		//	System.out.println(scanner.nextLine());
+          			docs_paths.put(temp_arr[1],temp_arr[2]);
+          	}}
+          	 catch (FileNotFoundException e) {
+          		    e.printStackTrace();
+          		} catch (IOException e) {
+          		    e.printStackTrace();
+          		} 
+      	return docs_paths;
+    }
     
     
 

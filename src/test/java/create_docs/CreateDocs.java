@@ -1,7 +1,11 @@
 import static com.codeborne.selenide.Condition.attribute;
+import static com.codeborne.selenide.Condition.disabled;
+import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
+
+import java.awt.Robot;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -25,10 +29,44 @@ public class CreateDocs {
 		this.driver = driver;
 	}
 	
-	public String Crt_Docs(String base_url, String doc_type, String search_key, Boolean set_fields){
+	
+	public String Create_Docs_Load(String doc_type, String doc_name, String search_key, Boolean set_fields){
+		nfunc = new AuthFunc(driver);
+		String base_url = nfunc.getBaseURL();
+		String[] cmp_data = nfunc.Get_Data_From_File("src/main/resources/test_cmp_data.txt");
+		String cmp_name_search_key = cmp_data[1];
+		double a = Math.random();
+		String doc_number = String.valueOf(a).substring(2, 7);
+		((JavascriptExecutor) driver).executeScript("window.location.href='"+base_url+"documents#?f=4'");
+		$(By.xpath("//a[@href='/document/new']")).click();
+		$(By.xpath("//span[@class='k-select'][1]")).click();
+		$("#documentTypeId_listbox").shouldBe(visible);
+    	$("[aria-owns=\"receiver-id_listbox\"]").shouldHave(attribute("aria-disabled", "true"));
+    	$(By.xpath("//input[@aria-owns='documentTypeId_listbox']")).val(search_key);
+    	sleep(1000);
+    	
+    	$(By.xpath("descendant-or-self::li[contains(text(),\""+search_key+"\")]")).click();
+    	$("[aria-owns=\"receiver-id_listbox\"]").click();
+    	sleep(500);
+    	$("input[aria-owns=\"receiver-id_listbox\"]").val(cmp_name_search_key);
+    	$(By.xpath("descendant-or-self::*[contains(text(),'"+cmp_name_search_key+"')]")).click();
+    	
+    	//$("#document-upload-link").click();
+    //	((JavascriptExecutor) driver).executeScript("document.getElementById('fileDocument').value = 'src/main/resources/docs/"+doc_name+".xml'");
+    	//((JavascriptExecutor) driver).executeScript("document.getElementById('fileDocument').style.display = 'block'; "
+    		//	+ "document.getElementById('fileDocument').parentElement.parentElement.parentElement.style.display = 'block' ;");
+    //	$("#fileDocument").sendKeys("src/main/resources/docs/"+doc_name+".xml");
+    //	Robot r = new Robot();
+    	
+    	
+    	sleep(1000);
+		return "auto"+doc_number;
+	}
+	
+	public String Crt_Docs(String doc_type, String search_key, Boolean set_fields){
     
 		nfunc = new AuthFunc(driver);
-		base_url = nfunc.getBaseURL();
+		String base_url = nfunc.getBaseURL();
 		String[] cmp_data = nfunc.Get_Data_From_File("src/main/resources/test_cmp_data.txt");
 		String cmp_name_search_key = cmp_data[1];
 		
@@ -123,11 +161,12 @@ public class CreateDocs {
 	    	$(By.xpath("//dd[@id='dopInfo']/form/ul/li/span/form/span[2]/input[1]")).sendKeys("Value_key_"+doc_number);
     	}
     	$(By.xpath("//div[@id='toolBar-form-container']/div/div/div/div/nav/ul/li[8]/a[@data-action=\"save\"]")).click();
-    	sleep(1000);
+    	sleep(1500);
     	$(By.xpath("//div[@id='document-card-toolBar-container']/div/div/div/div/nav/ul/li[8]/a[@data-action=\"save\"]")).click(); 
     	sleep(1000);
     	return "auto"+doc_number;
     }
+	
 	public void Check_After_Create(String doc_num)
 	{
 		 $("[href=\"/documents#?f=3\"]").click();
@@ -139,4 +178,7 @@ public class CreateDocs {
 		$(By.xpath("descendant-or-self::a[contains(text(),'"+doc_num+"')]")).shouldBe(visible);
 		
 	}
+	
+	
+		
 }
