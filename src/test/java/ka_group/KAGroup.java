@@ -7,8 +7,14 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
+import java.util.regex.Pattern;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -23,7 +29,7 @@ public class KAGroup {
 	
     protected AuthFunc nfunc;
     
-    protected String server;
+    protected String server = System.getProperty("server");
     
     protected String base_url;
     
@@ -43,25 +49,53 @@ public class KAGroup {
         this.driver = driver;
     }
     
-    public String CreateKAGroup () // переделать, чтобы создавала группу для нескольких КА, переданных массивом
+    public String[] Get_Test_Data(String f_path)
+  	{
+      	String[] data = new String[10];
+      	try {
+          	Path filePath = Paths.get(f_path);
+          	Scanner scanner = new Scanner(filePath);
+          	Pattern pattern = Pattern.compile(".*"+server+".*");
+          	int j = 0;
+          	while (scanner.hasNext()) {
+          		if (scanner.hasNext(pattern))
+          			data[j] = scanner.nextLine().replace(server+";","");j++;
+          	}}
+          	 catch (FileNotFoundException e) {
+          		    e.printStackTrace();
+          		} catch (IOException e) {
+          		    e.printStackTrace();
+          		} 
+      	return data;
+          	
+  	}
+    
+    public String CreateKAGroup (String[] cmp_search_keys, String group_name) 
     {
-    	nfunc = new AuthFunc(getWebDriver());
-		String base_url = nfunc.getBaseURL();
-		String[] cmp_data = nfunc.Get_Data_From_File("src/main/resources/test_cmp_data.txt");
-		String cmp_name_search_key = cmp_data[1];
+    	
 		double a = Math.random();
-		String group_name = "auto_group_"+String.valueOf(a).substring(2, 7);
+		if (group_name == "") group_name = "auto_group_"+String.valueOf(a).substring(2, 7);
     	$("[data-menu-status='RelationRequestCount']").click();
     	$(By.xpath("//a[@href='/manage/counteragent/group']")).click();
     	$("#add-item").click();
     	sleep(500);
     	$("[data-action='save']").shouldHave(attribute("class","button primary disabled ignore"));
-    	$("#add-item").click();
-    	$(By.cssSelector("[aria-owns^=selected-users-for-role_taglist]")).click();sleep(500);
-    	$(By.cssSelector("[aria-owns^=selected-users-for-role_taglist]")).val(cmp_name_search_key);	
-    	sleep(500);
-    	$(By.xpath("descendant-or-self::*[contains(text(),'"+cmp_name_search_key+" /')]")).click();
-    	$(By.cssSelector("[id$=popup-save-button]")).click();
+	    	for(int i=0; i < cmp_search_keys.length; i++)
+	    	{
+		    	if(cmp_search_keys[i] != null)
+		    	{	
+			    	$("#add-item").click();
+			    	
+			    	sleep(500);
+			    	$(By.cssSelector("[aria-owns^=selected-users-for-role_taglist]")).click();
+			    	sleep(500);
+			    	$(By.cssSelector("[aria-owns^=selected-users-for-role_taglist]")).val(cmp_search_keys[i]);	
+			    	sleep(500);
+			    	$(By.xpath("descendant-or-self::*[contains(text(),'"+cmp_search_keys[i]+" /')]")).click();
+			    	$(By.cssSelector("[id$=popup-save-button]")).click();
+		    	}
+	    	}
+    	
     	$("[data-action='save']").click();
     	sleep(500);
     //	$("input[data-bind=\"value: name\"]").shouldHave(attribute("aria-invalid","true")); надо потом разобраться, схера ли отрабатывает 1 раз из 5-ти
