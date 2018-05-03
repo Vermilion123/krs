@@ -36,7 +36,7 @@ public class CreateDocsTest {
 	    protected  String[][] doc_types = {{"UPD_SCHF","УПД. Счет-фактура",""},{"UPD_DOP","УПД. Документ об отгрузке товаров",""},{"UPD_SF_DOP","Счет-фактура и документ об отгрузке товаров",""},
 				 {"UCD_CSF","УКД. Корректировочный счет-фактура",""},{"UCD_DIC","УКД. Документ об изменении стоимости отгруженных товаров",""},{"UCD_CSF_DIC","УКД. Корректировочный счет-фактура и документ об изменении",""}};
 	   
-	    @Test (enabled=false)
+	    @Test 
 	    
 	    public void Get_File_Docs(){
 	    	nfunc = new AuthFunc(getWebDriver());
@@ -47,12 +47,21 @@ public class CreateDocsTest {
 	    	}
 	    }
 	    
-	    @Test (enabled=false)
+	    @Test (enabled=false) 
 	    
 	    public void New_UPD_SCHF_Load(){
 	    	crd = new CreateDocs(getWebDriver());
 			 
 			doc_num = crd.Create_Docs_Load(doc_types[0][0], doc_types[0][2], doc_types[0][1],false);
+			crd.Check_After_Create(doc_num);
+	    }
+	    
+	    @Test 
+	    
+	    public void New_UPD_DOP_Load(){
+	    	crd = new CreateDocs(getWebDriver());
+			 
+			doc_num = crd.Create_Docs_Load(doc_types[1][0], doc_types[1][2], doc_types[1][1],false);
 			crd.Check_After_Create(doc_num);
 	    }
 	    

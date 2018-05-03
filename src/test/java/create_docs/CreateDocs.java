@@ -6,6 +6,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
 import java.awt.Robot;
+import java.io.File;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -35,8 +36,7 @@ public class CreateDocs {
 		String base_url = nfunc.getBaseURL();
 		String[] cmp_data = nfunc.Get_Data_From_File("src/main/resources/test_cmp_data.txt");
 		String cmp_name_search_key = cmp_data[1];
-		double a = Math.random();
-		String doc_number = String.valueOf(a).substring(2, 7);
+		
 		((JavascriptExecutor) driver).executeScript("window.location.href='"+base_url+"documents#?f=4'");
 		$(By.xpath("//a[@href='/document/new']")).click();
 		$(By.xpath("//span[@class='k-select'][1]")).click();
@@ -50,17 +50,14 @@ public class CreateDocs {
     	sleep(500);
     	$("input[aria-owns=\"receiver-id_listbox\"]").val(cmp_name_search_key);
     	$(By.xpath("descendant-or-self::*[contains(text(),'"+cmp_name_search_key+"')]")).click();
-    	
-    	//$("#document-upload-link").click();
-    //	((JavascriptExecutor) driver).executeScript("document.getElementById('fileDocument').value = 'src/main/resources/docs/"+doc_name+".xml'");
-    	//((JavascriptExecutor) driver).executeScript("document.getElementById('fileDocument').style.display = 'block'; "
-    		//	+ "document.getElementById('fileDocument').parentElement.parentElement.parentElement.style.display = 'block' ;");
-    //	$("#fileDocument").sendKeys("src/main/resources/docs/"+doc_name+".xml");
-    //	Robot r = new Robot();
-    	
-    	
-    	sleep(1000);
-		return "auto"+doc_number;
+    	((JavascriptExecutor) driver).executeScript("document.getElementById('fileDocument').style.display = 'block'; "
+    			+ "document.getElementById('fileDocument').parentElement.parentElement.parentElement.style.display = 'block' ;");
+    	File file = new File("src/main/resources/docs/"+doc_name+".xml");
+    	$("#fileDocument").uploadFile(file);
+    	sleep(2000);
+    	$(By.xpath("//div[@id='document-card-toolBar-container']/div/div/div/div/nav/ul/li[8]/a[@data-action=\"save\"]")).click(); 
+    	String doc_number = $("#number").val();
+		return doc_number;
 	}
 	
 	public String Crt_Docs(String doc_type, String search_key, Boolean set_fields){

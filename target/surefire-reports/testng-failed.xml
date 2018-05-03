@@ -7,7 +7,7 @@
     <classes>
       <class name="CreateDocsTest">
         <methods>
-          <include name="New_UPD_SCHF"/>
+          <include name="New_UPD_SCHF_Load"/>
         </methods>
       </class> <!-- CreateDocsTest -->
       <class name="AuthTest">

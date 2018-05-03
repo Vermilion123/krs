@@ -2,18 +2,22 @@
 <testng-results total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-04-12T11:25:53Z" name="TestSuite" finished-at="2018-04-12T11:26:22Z" duration-ms="29199">
+  <suite started-at="2018-04-20T11:09:04Z" name="TestSuite" finished-at="2018-04-20T11:09:25Z" duration-ms="20769">
     <groups>
     </groups>
-    <test started-at="2018-04-12T11:25:53Z" name="ChromeTest" finished-at="2018-04-12T11:26:22Z" duration-ms="29199">
+    <test started-at="2018-04-20T11:09:04Z" name="ChromeTest" finished-at="2018-04-20T11:09:25Z" duration-ms="20769">
       <class name="CreateDocsTest">
-        <test-method signature="New_UPD_SCHF()[pri:0, instance:CreateDocsTest@5c5eefef]" started-at="2018-04-12T14:26:08Z" name="New_UPD_SCHF" finished-at="2018-04-12T14:26:22Z" duration-ms="14073" status="PASS">
+        <test-method signature="Get_File_Docs()[pri:0, instance:CreateDocsTest@478190fc]" started-at="2018-04-20T14:09:13Z" name="Get_File_Docs" finished-at="2018-04-20T14:09:13Z" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- New_UPD_SCHF -->
+        </test-method> <!-- Get_File_Docs -->
+        <test-method signature="New_UPD_DOP_Load()[pri:0, instance:CreateDocsTest@478190fc]" started-at="2018-04-20T14:09:13Z" name="New_UPD_DOP_Load" finished-at="2018-04-20T14:09:25Z" duration-ms="11634" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- New_UPD_DOP_Load -->
       </class> <!-- CreateDocsTest -->
       <class name="AuthTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:AuthTest@16d04d3d]" started-at="2018-04-12T14:25:53Z" name="setup" finished-at="2018-04-12T14:26:03Z" duration-ms="9634" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:AuthTest@3febb011]" started-at="2018-04-20T14:09:04Z" name="setup" finished-at="2018-04-20T14:09:09Z" duration-ms="5012" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -24,17 +28,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="LoginCourier()[pri:0, instance:AuthTest@16d04d3d]" started-at="2018-04-12T14:26:03Z" name="LoginCourier" finished-at="2018-04-12T14:26:06Z" duration-ms="3213" status="PASS">
+        <test-method signature="LoginCourier()[pri:0, instance:AuthTest@3febb011]" started-at="2018-04-20T14:09:09Z" name="LoginCourier" finished-at="2018-04-20T14:09:13Z" duration-ms="4112" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginCourier -->
       </class> <!-- AuthTest -->
-      <class name="NewDocTest">
-        <test-method signature="New_Doc_Form_Test()[pri:0, instance:NewDocTest@7f0eb4b4]" started-at="2018-04-12T14:26:06Z" name="New_Doc_Form_Test" finished-at="2018-04-12T14:26:08Z" duration-ms="2268" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- New_Doc_Form_Test -->
-      </class> <!-- NewDocTest -->
     </test> <!-- ChromeTest -->
   </suite> <!-- TestSuite -->
 </testng-results>

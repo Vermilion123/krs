@@ -57,7 +57,7 @@ public class KAGroupTest {
     
     }
     
-    @Test
+    @Test (enabled=false)
     
     public void Check_GroupWithKAExist ()
     {

@@ -1,6 +1,7 @@
+KAGroup.class
 AuthFunc.class
 CreateDocs.class
+KAGroupTest.class
 AuthTest.class
 CreateDocsTest.class
 InfoFields.class
-NewDocTest.class
