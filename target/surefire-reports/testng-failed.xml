@@ -7,11 +7,13 @@
     <classes>
       <class name="CreateDocsTest">
         <methods>
-          <include name="New_UPD_SCHF_Load"/>
+          <include name="New_UPD_DOP_Load"/>
+          <include name="Get_File_Docs"/>
         </methods>
       </class> <!-- CreateDocsTest -->
       <class name="AuthTest">
         <methods>
+          <include name="LoginCourier"/>
           <include name="setup"/>
         </methods>
       </class> <!-- AuthTest -->
