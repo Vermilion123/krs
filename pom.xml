@@ -35,11 +35,11 @@
  		   <artifactId>slf4j-simple</artifactId>
   		  <version>1.6.1</version>
 		</dependency>
-		<dependency>
+	<!--  <dependency>
 		     <groupId>org.jenkins-ci.plugins</groupId>
   			 <artifactId>chromedriver</artifactId>
   			 <version>1.2</version>
-		</dependency>
+		</dependency>-->	
 		<dependency>
   		  <groupId>com.google.guava</groupId>
  		   <artifactId>guava</artifactId>
