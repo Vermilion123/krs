@@ -58,7 +58,7 @@ public class AuthTest {
     	
     	base_url = "https://courier-"+server+".esphere.ru/";
     	 Configuration.browser = "chrome";
-    //	 System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+    	 System.setProperty("webdriver.chrome.driver", "target/classes/chromedriver.exe");
     	 
     	 System.setProperty("selenide.browser", "chrome");
     	 
